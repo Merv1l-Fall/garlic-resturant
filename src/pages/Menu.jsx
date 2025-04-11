@@ -1,5 +1,6 @@
 import { menuItems } from "../data/menuItems";
 import './Menu.css';
+import { Link, useParams } from 'react-router'
 
 const Menu = () => {
   return (
@@ -10,6 +11,9 @@ const Menu = () => {
 		  <li key={item.id}>
 			<h2>{item.title}</h2>
 			<p>{item.ingredients}</p>
+			<p className="price">{item.price} kr</p>
+			<img src={item.img} alt={item.title} />
+			<Link to={`/menu/${item.id}`} className="details-link">Tryck för mer info</Link>
 		  </li>
 		))}
 	  </ul>

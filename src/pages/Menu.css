@@ -19,6 +19,12 @@
 		color: rgb(248, 244, 244);
 		border-radius: 5px;
 		cursor: pointer;
-		
+
+		&:hover {
+			background-color: #3a3a3a;
+		}
+		&:active {
+			background-color: #1a1a1a;
+		}
 	}
 }
