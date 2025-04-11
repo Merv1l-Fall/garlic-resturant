@@ -1,4 +1,4 @@
-import { menuItems } from "../data/menuItems";
+// import { menuItems } from "../data/menuItems";
 import './Menu.css';
 
 const Menu = () => {
