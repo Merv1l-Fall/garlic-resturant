@@ -5,6 +5,7 @@ import "./index.css";
 import App from "./App.jsx";
 import Home from "./pages/Home.jsx";
 import Menu from "./pages/Menu.jsx";
+import Checkout from "./pages/Checkout.jsx";
 
 const router = createHashRouter([
     {
