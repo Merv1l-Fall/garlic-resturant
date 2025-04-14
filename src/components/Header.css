@@ -3,13 +3,14 @@
     background-color: #6F9E6A;
     padding: 20px;
     display: flex;
-    justify-content: space-between;  /* Sprider ut elementen */
+    justify-content: space-between; 
     align-items: center;
+    width: 100%;
 }
 
 .header-left {
     display: flex;
-    align-items: center;  /* För att hålla garlic-icon och rubrik tillsammans */
+    align-items: center;
 }
 
 .header-left h1 {
@@ -26,9 +27,77 @@
 }
 
 .cart-icon {
-    width: 40px; 
+    width: 40px;
     height: auto;
-    margin-left: 20px;  /* Avstånd mellan rubrik och varukorgsikon */
+    margin-left: 0px;
 }
+
+/* 320px */
+@media (max-width: 320px) {
+    .header {
+        padding: 10px;  
+        flex-direction: row;  
+        align-items: center; 
+    }
+
+    .header-left {
+        display: flex;
+        align-items: left;
+        margin: 0;
+    }
+
+    .header-left h1 {
+        font-size: 23px; 
+    }
+
+    .garlic-icon {
+        width: 30px; 
+        margin: 0; 
+    }
+
+    .cart-icon {
+        width: 35px;
+        margin: 0;  
+    }
+}
+
+/* För skärmar upp till 750px */
+@media (max-width: 750px) {
+    .header {
+        padding: 15px;  /* Minska padding något */
+    }
+
+    .header-left h1 {
+        font-size: 36px;  /* Justera rubrikstorleken för mellan skärmstorlekar */
+    }
+
+    .garlic-icon {
+        width: 45px;  /* Minska garlic-ikonen något för mellanskärmar */
+    }
+
+    .cart-icon {
+        width: 38px;  /* Justera cart-ikonen */
+    }
+}
+
+/* För skärmar upp till 1100px */
+@media (max-width: 1100px) {
+    .header {
+        padding: 20px;  /* Standard padding för större skärmar */
+    }
+
+    .header-left h1 {
+        font-size: 42px;  /* Justera rubrikstorleken för större skärmar */
+    }
+
+    .garlic-icon {
+        width: 50px;  /* Standardstorlek för garlic-ikonen */
+    }
+
+    .cart-icon {
+        width: 40px;  /* Standardstorlek för cart-ikonen */
+    }
+}
+
 
 
