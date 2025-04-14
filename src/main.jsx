@@ -12,7 +12,7 @@ const router = createHashRouter([
         path: "/",
         Component: App,
         children: [
-            { index: true, Component: Login },
+            { index: true, Component: Home },
             { path: "/menu", Component: Menu },
         ],
     },
