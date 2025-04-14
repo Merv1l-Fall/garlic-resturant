@@ -10,10 +10,6 @@ const Login = () => {
     const handleLogIn = () => {
         if (password === "mums") {
             toggleAdmin();
-            console.log(!admin);
-            console.log("DU ÄR INNE");
-        } else {
-            console.log("FEEEEEEEl");
         }
         setPassword(null);
     };
@@ -21,16 +17,17 @@ const Login = () => {
     const handleLogOut = () => {
         if (admin) {
             toggleAdmin();
-            console.log(!admin);
-        } else {
-            console.log("du är redan utloggad");
         }
     };
 
     return (
         <div className="login">
             <div className="login-box">
-                <h3>Logga in för att ändra</h3>
+                {!admin ? (
+                    <h3>Logga in för att ändra</h3>
+                ) : (
+                    <h3>Du är inloggad</h3>
+                )}
                 <div className="input-box">
                     <input
                         type="password"
@@ -39,8 +36,12 @@ const Login = () => {
                         onChange={(e) => setPassword(e.target.value)}
                         value={password || ""}
                     />
-                    <button onClick={handleLogIn}>Logga in</button>
-                    <button onClick={handleLogOut}>Logga ut</button>
+                    <button onClick={handleLogIn} disabled={!password || admin}>
+                        Logga in
+                    </button>
+                    <button onClick={handleLogOut} disabled={!admin}>
+                        Logga ut
+                    </button>
                 </div>
             </div>
         </div>
