@@ -1,65 +1,65 @@
 .edit-menu {
-    background-color: var(--background);
-    padding: 20px;
-    font-family: Arial, sans-serif;
-    text-align: center;
+	background-color: var(--background);
+	padding: 20px;
+	font-family: Arial, sans-serif;
+	text-align: center;
 	display: flex;
 	flex-direction: column;
 	align-items: center;
 	max-width: 320px;
-}
 
-.back-button {
-    background: none;
-    border: none;
-    font-size: 1.2rem;
-    margin-bottom: 1.5rem;
-    cursor: pointer;
-	border: var(--dark-brown) 1px solid;
-	padding: 0.5rem 1rem;
-	color: var(--dark-brown);
-}
-
-.menu-list {
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-}
-
-.menu-item {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    border: 1px solid black;
-    padding: 0.6rem;
-	min-width: 16rem;
-   
-	p{
-		font-size: 1.5rem;
-		padding: 0;
-		margin: 0;
+	.back-button {
+		background: none;
+		border: none;
+		font-size: 1.2rem;
+		margin-bottom: 1.5rem;
+		cursor: pointer;
+		border: var(--dark-brown) 1px solid;
+		padding: 0.5rem 1rem;
+		color: var(--dark-brown);
 	}
-}
 
-.menu-actions {
-	display: flex;
-	flex-direction: column;
-	gap: 0.2rem;
-}
+	.menu-list {
+		display: flex;
+		flex-direction: column;
+		gap: 10px;
+	}
 
-.menu-actions button {
-    padding: 0.2rem;
-    cursor: pointer;
-	background: none;
-	border: var(--dark-brown) 2px solid;
-}
+	.menu-item {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		border: 1px solid black;
+		padding: 0.6rem;
+		min-width: 16rem;
 
-.add-button {
-    margin-top: 20px;
-    padding: 10px 20px;
-    background-color: #8bc34a;
-    color: white;
-    border: none;
-    cursor: pointer;
-    font-size: 16px;
+		p {
+			font-size: 1.5rem;
+			padding: 0;
+			margin: 0;
+		}
+	}
+
+	.menu-actions {
+		display: flex;
+		flex-direction: column;
+		gap: 0.2rem;
+	}
+
+	.menu-actions button {
+		padding: 0.2rem;
+		cursor: pointer;
+		background: none;
+		border: var(--dark-brown) 2px solid;
+	}
+
+	.add-button {
+		margin-top: 20px;
+		padding: 10px 20px;
+		background-color: #8bc34a;
+		color: white;
+		border: none;
+		cursor: pointer;
+		font-size: 16px;
+	}
 }
