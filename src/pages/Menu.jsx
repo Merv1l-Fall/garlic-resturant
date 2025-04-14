@@ -9,16 +9,21 @@ const Menu = () => {
 	  <ul>
 	  {menuItems.map((item) => (
 		  <li key={item.id}>
+			<div className="text-content">
 			<h2>{item.title}</h2>
 			<p>{item.ingredients}</p>
-			<p className="price">{item.price} kr</p>
-			<img src={item.img} alt={item.title} />
 			<Link to={`/menu/${item.id}`} className="details-link">Tryck för mer info</Link>
+			</div>
+			<div className="img-content">
+			<p className="price">{item.price} kr</p>
+			<img src={item.img} alt={item.title} />	
+			</div>
 		  </li>
 		))}
 	  </ul>
 	</div>
   );
 }
+
 
 export default Menu;

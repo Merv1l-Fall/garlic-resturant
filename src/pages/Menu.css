@@ -6,6 +6,18 @@
   	height: 100%;
   	background-color: #faf9ba;
 	margin: 0;
+	font-family: 'Galdeano';
+
+
+	h1{
+		text-align: center;
+		font-size: 3em;
+		font-family: 'galdeano';
+		margin: 0;
+		padding: 1em;
+		background-color: #251414;
+		color: rgb(248, 244, 244);
+	}
 
 	ul{
 		padding: 0;
@@ -19,6 +31,12 @@
 		color: rgb(248, 244, 244);
 		border-radius: 5px;
 		cursor: pointer;
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		font-size: 1.5em;
+		margin-bottom: 2rem;
+		gap: 7rem;
 
 		&:hover {
 			background-color: #3a3a3a;
@@ -26,5 +44,38 @@
 		&:active {
 			background-color: #1a1a1a;
 		}
+		.text-content {
+			flex: 1;
+		  }
+		  
+		.img-content {
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			gap: 0.5rem;
+			width: 250px; /* fast storlek */
+			flex-shrink: 0;
+		  }
+	  
+		.img-content img {
+			width: 100%;
+			height: auto;
+			max-height: 200px; /* om du vill begränsa höjd */
+			object-fit: cover;
+			border-radius: 8px;
+		  }
 	}
+	/* Mobilanpassning */
+@media (max-width: 768px) {
+	li {
+	  flex-direction: column; /* Stapla text och bild ovanpå varandra */
+	  align-items: flex-start; /* vänsterjustera */
+	}
+  
+	li img {
+	  width: 100%; /* Gör bilden bredare på mobil */
+	  max-width: 400px; /* Max så den inte blir jättestor */
+	  margin-top: 1rem;
+	}
+  }
 }
