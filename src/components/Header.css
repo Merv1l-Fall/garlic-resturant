@@ -1,12 +1,20 @@
+/* Header.css */
 .header {
-    background-color: #6F9E6A; 
-    padding: 30px;
+    background-color: #6F9E6A;
+    padding: 20px;
     display: flex;
+    justify-content: space-between;  /* Sprider ut elementen */
+    align-items: center;
 }
 
-.header h1 {
-    color: rgb(0, 0, 0); 
-    font-size: 42px; 
+.header-left {
+    display: flex;
+    align-items: center;  /* För att hålla garlic-icon och rubrik tillsammans */
+}
+
+.header-left h1 {
+    color: rgb(0, 0, 0);
+    font-size: 48px;
     margin: 0;
     font-family: 'Italiana', serif;
 }
@@ -14,6 +22,13 @@
 .garlic-icon {
     width: 50px;
     height: auto;
-    margin: 0;
     transform: rotate(-15deg);
 }
+
+.cart-icon {
+    width: 40px; 
+    height: auto;
+    margin-left: 20px;  /* Avstånd mellan rubrik och varukorgsikon */
+}
+
+

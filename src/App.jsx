@@ -1,20 +1,17 @@
 import "./App.css";
-import Menu from "./pages/Menu";
 import { Outlet } from "react-router";
+import Header from "./components/Header"; 
 
 function App() {
     return (
         <div>
-            <header>
-                <h1>KLYFTAN</h1>
-                <nav></nav>
-                <button>cart</button>
-            </header>
+            <Header /> {/*Header*/}
             <main>
-                <Outlet />
+                <Outlet /> {/*Home och Menu */}
             </main>
         </div>
     );
 }
 
 export default App;
+
