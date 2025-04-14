@@ -4,12 +4,19 @@ import { useState } from "react";
 
 const Login = () => {
     const [password, setPassword] = useState(null);
+    const [error, setError] = useState("");
     const toggleAdmin = useLoginStore((state) => state.toggleAdmin);
     const admin = useLoginStore((state) => state.admin);
+    const [valid, setValid] = useState("");
 
     const handleLogIn = () => {
         if (password === "mums") {
             toggleAdmin();
+            setError("");
+            setValid("valid");
+        } else {
+            setError("Fel lösenord.");
+            setValid("invalid");
         }
         setPassword(null);
     };
@@ -17,6 +24,12 @@ const Login = () => {
     const handleLogOut = () => {
         if (admin) {
             toggleAdmin();
+        }
+    };
+
+    const handleEnter = (e) => {
+        if (e.key === "Enter" && !admin) {
+            handleLogIn();
         }
     };
 
@@ -28,12 +41,15 @@ const Login = () => {
                 ) : (
                     <h3>Du är inloggad</h3>
                 )}
+                <p>{error}</p>
                 <div className="input-box">
                     <input
+                        className={valid}
                         type="password"
                         id="password"
                         placeholder="Lösenord"
                         onChange={(e) => setPassword(e.target.value)}
+                        onKeyDown={handleEnter}
                         value={password || ""}
                     />
                     <button onClick={handleLogIn} disabled={!password || admin}>

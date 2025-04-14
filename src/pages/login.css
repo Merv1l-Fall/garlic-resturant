@@ -22,6 +22,10 @@
                 padding: 0.5rem;
                 border: none;
                 box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+
+                &.invalid {
+                    border: 3px solid rgb(255, 0, 0);
+                }
             }
             button {
                 font-size: 22px;
