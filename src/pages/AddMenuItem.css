@@ -6,10 +6,11 @@
 	height: 100%;
 
 	button {
-		padding: 10px 20px;
-		font-size: 16px;
+		padding: 1rem;
+		font-size: 1rem;
 		border: none;
 		cursor: pointer;
+		width: 6rem;
 	}
 
 	.cancel-button {
@@ -18,7 +19,7 @@
 	}
 
 	.submit-button {
-		background-color: #8bc34a;
+		background-color: var(--green);
 		color: white;
 	}
 

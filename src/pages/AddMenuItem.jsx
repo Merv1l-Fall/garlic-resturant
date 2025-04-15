@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import Joi from 'joi';
 import addMenuItemSchema from '../validation';
 import "./AddMenuItem.css";
+import { saveMenu } from '../data/fetchMenu';
 
 const AddMenuItem = () => {
     const [formData, setFormData] = useState({
@@ -9,7 +10,8 @@ const AddMenuItem = () => {
         description: '',
         ingredients: '',
         price: '',
-        imageUrl: '',
+        img: '',
+		id: Crypto.randomUUID(),
     });
 
     const [errors, setErrors] = useState({});
@@ -100,10 +102,10 @@ const AddMenuItem = () => {
                     {errors.imageUrl && <p className="error">{errors.imageUrl}</p>}
                 </label>
                 <div className="form-actions">
-                    <button type="button" onClick={handleCancel}>
+                    <button className='cancel-button' type="button" onClick={handleCancel}>
                         ångra
                     </button>
-                    <button type="submit">Lägg till</button>
+                    <button className='submit-button' type="submit" onClick={saveMenu}>Lägg till</button>
                 </div>
             </form>
         </section>

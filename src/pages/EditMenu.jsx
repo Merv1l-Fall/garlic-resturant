@@ -1,13 +1,15 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import "./EditMenu.css"
 
+import { saveMenu, loadMenu } from '../data/fetchMenu';
+
 const EditMenu = () => {
-    const [menuItems, setMenuItems] = useState([
-        { id: 1, name: 'Vitlöksräkor' },
-        { id: 2, name: 'Vitlöksräkor' },
-        { id: 3, name: 'Vitlöksräkor' },
-        { id: 4, name: 'Vitlöksräkor' },
-    ]);
+    const [menuItems, setMenuItems] = useState([]);
+
+	useEffect(() => {
+		loadMenu(setMenuItems);
+		// console.log(menuItems)
+	}, []);
 
     const handleEdit = (id) => {
         console.log(`Edit item with id: ${id}`);
@@ -29,7 +31,7 @@ const EditMenu = () => {
             <div className="menu-list">
                 {menuItems.map((item) => (
                     <div key={item.id} className="menu-item">
-                        <p>{item.name}</p>
+                        <p>{item.title}</p>
                         <div className="menu-actions">
                             <button onClick={() => handleEdit(item.id)}>Ändra</button>
                             <button onClick={() => handleRemove(item.id)}>Ta bort</button>
@@ -37,7 +39,7 @@ const EditMenu = () => {
                     </div>
                 ))}
             </div>
-            <button className="add-button" onClick={handleAddNew}>
+            <button className="add-button" onClick={saveMenu}>
                 Lägg till ny rätt
             </button>
         </section>

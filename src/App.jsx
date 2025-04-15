@@ -10,10 +10,9 @@ function App() {
         <div>
             <Header /> {/*Header*/}
             <main>
-                <Outlet />
-                {/* <EditMenu /> */}
-                <AddMenuItem />
-                <Outlet /> {/*Home och Menu */}
+                {/* <Outlet /> */}
+				<EditMenu />
+				{/* <AddMenuItem /> */}
             </main>
         </div>
     );
