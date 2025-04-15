@@ -2,7 +2,7 @@ import React from 'react';
 import './Header.css';
 import GarlicIcon from './lucide-lab_garlic.png';
 import CartIcon from './cart.png';  
-import { Link } from 'react-router-dom'; 
+import { Link } from 'react-router'; 
 
 const Header = () => {
   return (

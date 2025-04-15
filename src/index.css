@@ -10,3 +10,7 @@
 	--green: #6F9E6A;
 	--pale-yellow: #FFF6A9;
 }
+
+body {
+    background-color: var(--background);
+}
