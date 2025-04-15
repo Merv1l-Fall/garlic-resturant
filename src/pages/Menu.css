@@ -36,7 +36,8 @@
 		align-items: center;
 		font-size: 1.5em;
 		margin-bottom: 2rem;
-		gap: 7rem;
+		gap: 3rem;
+		font-family: 'Galdeano';
 
 		&:hover {
 			background-color: #3a3a3a;
@@ -46,6 +47,7 @@
 		}
 		.text-content {
 			flex: 1;
+		
 		  }
 		  
 		.img-content {
@@ -53,17 +55,23 @@
 			flex-direction: column;
 			align-items: center;
 			gap: 0.5rem;
-			width: 250px; /* fast storlek */
+			max-width: 500px; 
 			flex-shrink: 0;
 		  }
 	  
 		.img-content img {
 			width: 100%;
 			height: auto;
-			max-height: 200px; /* om du vill begränsa höjd */
+			max-height: 400px; /* om du vill begränsa höjd */
 			object-fit: cover;
-			border-radius: 8px;
+			border-radius: 2px;
 		  }
+		.img-content p{
+			font-size: 1.7em;
+			text-align: center;
+			margin: 0;
+			
+		}
 	}
 	/* Mobilanpassning */
 @media (max-width: 768px) {
@@ -77,5 +85,6 @@
 	  max-width: 400px; /* Max så den inte blir jättestor */
 	  margin-top: 1rem;
 	}
+
   }
 }
