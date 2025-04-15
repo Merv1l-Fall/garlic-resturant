@@ -1,11 +1,15 @@
-import { menuItems } from "./menuItems"
+
 const url = "https://forverkliga.se/JavaScript/api/jsonStore.php"
 const key = "StarkasteVitlöken"
 
-const stringifiedMenu = JSON.stringify(menuItems)
 
 
-async function saveMenu() {
+
+async function saveMenu(menuItems) {
+
+	const stringifiedMenu = JSON.stringify(menuItems)
+
+
 	try {
 		const response = await fetch(`${url}?method=save`, {
 			method : "POST",
@@ -33,7 +37,6 @@ async function loadMenu(setData) {
 		const parsedData = JSON.parse(data)
 		console.log(parsedData)
 		setData(parsedData)
-		// return parsedData
 	} catch(error){
 		console.error("fel vid laddning av meny " + error)
 	}

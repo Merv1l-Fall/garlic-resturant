@@ -17,12 +17,12 @@ const addMenuItemSchema = Joi.object({
     }),
     imageUrl: Joi.string()
         .uri({ scheme: ['http', 'https'] })
-        .regex(/\.(jpeg|jpg|gif|png)$/i)
+        // .regex(/\.(jpeg|jpg|gif|png)$/i)
         .required()
         .messages({
             'string.empty': 'Bildlänk är obligatoriskt.',
             'string.uri': 'Bildlänk måste vara en giltig URL.',
-            'string.pattern.base': 'Bildlänk måste vara en URL till en bild (jpeg, jpg, gif, png).',
+            // 'string.pattern.base': 'Bildlänk måste vara en URL till en bild (jpeg, jpg, gif, png).',
         }),
 });
 
