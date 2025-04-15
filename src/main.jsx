@@ -5,6 +5,8 @@ import "./index.css";
 import App from "./App.jsx";
 import Home from "./pages/Home.jsx";
 import Menu from "./pages/Menu.jsx";
+import EditMenu from "./pages/EditMenu.jsx";
+
 import Login from "./pages/Login.jsx";
 
 const router = createHashRouter([
@@ -14,6 +16,7 @@ const router = createHashRouter([
         children: [
             { index: true, Component: Home },
             { path: "/menu", Component: Menu },
+            { path: "/edit-menu", Component: EditMenu },
         ],
     },
 ]);

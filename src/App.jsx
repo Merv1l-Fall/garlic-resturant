@@ -1,5 +1,7 @@
 import "./App.css";
-import Menu from "./pages/Menu";
+// import Menu from "./pages/Menu";
+import EditMenu from "./pages/EditMenu";
+import AddMenuItem from "./pages/AddMenuItem";
 import { Outlet } from "react-router";
 
 function App() {
@@ -12,6 +14,8 @@ function App() {
             </header>
             <main>
                 <Outlet />
+				{/* <EditMenu /> */}
+				<AddMenuItem />
             </main>
         </div>
     );

@@ -1,0 +1,12 @@
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+:root{
+	--background: #FFFBD6;
+	--dark-brown: #251414;
+	--green: #6F9E6A;
+	--pale-yellow: #FFF6A9;
+}
