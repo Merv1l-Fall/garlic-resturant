@@ -11,9 +11,7 @@ function App() {
             <Header /> {/*Header*/}
             <main>
                 <Outlet />
-                {/* <EditMenu /> */}
-                <AddMenuItem />
-                <Outlet /> {/*Home och Menu */}
+               
             </main>
         </div>
     );
