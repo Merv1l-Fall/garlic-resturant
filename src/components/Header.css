@@ -64,38 +64,38 @@
 /* För skärmar upp till 750px */
 @media (max-width: 750px) {
     .header {
-        padding: 15px;  /* Minska padding något */
+        padding: 15px;  
     }
 
     .header-left h1 {
-        font-size: 36px;  /* Justera rubrikstorleken för mellan skärmstorlekar */
+        font-size: 36px; 
     }
 
     .garlic-icon {
-        width: 45px;  /* Minska garlic-ikonen något för mellanskärmar */
+        width: 45px;  
     }
 
     .cart-icon {
-        width: 38px;  /* Justera cart-ikonen */
-    }
+        width: 38px; 
+    } 
 }
 
 /* För skärmar upp till 1100px */
 @media (max-width: 1100px) {
     .header {
-        padding: 20px;  /* Standard padding för större skärmar */
+        padding: 20px; 
     }
 
     .header-left h1 {
-        font-size: 42px;  /* Justera rubrikstorleken för större skärmar */
+        font-size: 42px;  
     }
 
     .garlic-icon {
-        width: 50px;  /* Standardstorlek för garlic-ikonen */
+        width: 50px;  
     }
 
     .cart-icon {
-        width: 40px;  /* Standardstorlek för cart-ikonen */
+        width: 40px; 
     }
 }
 
