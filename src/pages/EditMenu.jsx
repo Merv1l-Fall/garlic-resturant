@@ -1,15 +1,9 @@
-import React, { useEffect, useState } from 'react';
 import { Link } from "react-router";
 import useMenuStore from '../data/menuStore';
 import "./EditMenu.css";
 
 const EditMenu = () => {
-    const {menuItems, loadMenuItems, removeMenuItem} = useMenuStore();
-
-	useEffect(() => {
-		loadMenuItems();
-		// console.log(menuItems)
-	}, []);
+    const {menuItems, removeMenuItem} = useMenuStore();
 
 	const handleRemove = (id) => {
 		removeMenuItem(id)
@@ -29,7 +23,7 @@ const EditMenu = () => {
                     </div>
                 ))}
             </div>
-			<Link to="/AddMenuItem">
+			<Link to="/add-menu-item">
             <button className="add-button">
                 Lägg till ny rätt
             </button>

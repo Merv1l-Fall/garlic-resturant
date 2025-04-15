@@ -9,6 +9,7 @@ import EditMenu from "./pages/EditMenu.jsx";
 
 import Login from "./pages/Login.jsx";
 import Checkout from "./pages/Checkout.jsx";
+import AddMenuItem from "./pages/AddMenuItem.jsx";
 
 const router = createHashRouter([
     {
@@ -18,6 +19,7 @@ const router = createHashRouter([
             { index: true, Component: Home },
             { path: "/menu", Component: Menu },
             { path: "/edit-menu", Component: EditMenu },
+            { path: "/add-menu-item", Component: AddMenuItem },
         ],
     },
 ]);

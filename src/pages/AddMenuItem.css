@@ -4,6 +4,10 @@
 	font-family: Arial, sans-serif;
 	text-align: center;
 	height: 100%;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	
 
 	button {
 		padding: 1rem;
@@ -35,6 +39,9 @@
 		align-items: center;
 		border: 1px solid var(--dark-brown);
 		padding: 1rem;
+		max-width: 40rem;
+		min-width: 19rem;
+		width: 100%;
 	}
 
 	label {
@@ -42,7 +49,6 @@
 		flex-direction: column;
 		text-align: left;
 		width: 100%;
-
 	}
 
 	input,
@@ -66,5 +72,11 @@
 		display: flex;
 		justify-content: space-between;
 		gap: 2rem;
+	}
+
+	.error-message {
+		min-height: 1rem;
+		color: red;
+		font-size: 0.9rem;
 	}
 }

@@ -1,9 +1,10 @@
-import { menuItems } from "../data/menuItems";
+import useMenuStore from "../data/menuStore";
 import "./Menu.css";
 import { Link, useParams } from "react-router";
 
 const Menu = () => {
-    return (
+	const {menuItems, loadMenuItems, removeMenuItem} = useMenuStore();
+	return (
         <div className="menu">
             <h1>Menu</h1>
             <ul>

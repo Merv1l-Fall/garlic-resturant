@@ -15,14 +15,8 @@ const addMenuItemSchema = Joi.object({
         'number.greater': 'Pris kan inte vara 0.',
         'any.required': 'Pris är obligatoriskt.',
     }),
-    imageUrl: Joi.string()
-        .uri({ scheme: ['http', 'https'] })
-        // .regex(/\.(jpeg|jpg|gif|png)$/i)
-        .required()
-        .messages({
+    img: Joi.string().required().messages({
             'string.empty': 'Bildlänk är obligatoriskt.',
-            'string.uri': 'Bildlänk måste vara en giltig URL.',
-            // 'string.pattern.base': 'Bildlänk måste vara en URL till en bild (jpeg, jpg, gif, png).',
         }),
 });
 

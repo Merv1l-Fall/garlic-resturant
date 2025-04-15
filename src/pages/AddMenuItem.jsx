@@ -5,7 +5,7 @@ import useMenuStore from '../data/menuStore';
 // import { saveMenu } from '../data/fetchMenu';
 
 const AddMenuItem = () => {
-	const {addMenuItem} = useMenuStore()
+	const {saveMenuItem} = useMenuStore()
 	const [formData, setFormData] = useState({
 		title: '',
 		description: '',
@@ -33,17 +33,35 @@ const AddMenuItem = () => {
 	};
 
 	const handleSubmit = (e) => {
-        e.preventDefault();
-        addMenuItem(formData); // Add the new item to the store
-        setFormData({
-            title: '',
-            description: '',
-            ingredients: '',
-            price: '',
-            img: '',
-            id: Crypto.randomUUID(),
-        });
-    };
+		e.preventDefault();
+	
+		// Validate the form before submitting
+		const validationErrors = validateForm();
+		if (validationErrors) {
+			setErrors(validationErrors);
+			console.log("failed to add item", validationErrors)
+			return;
+		}
+	
+		// Add the new item to the store or API
+		const newMenuItem = {
+			...formData,
+			id: crypto.randomUUID(), // Generate a unique ID for the new item
+		};
+	
+		saveMenuItem(newMenuItem);
+	
+		// Reset the form after submission
+		setFormData({
+			title: '',
+			description: '',
+			ingredients: '',
+			price: '',
+			img: '',
+		});
+	
+		setErrors({});
+	};
 
 	const handleCancel = () => {
 		console.log('Cancelled adding new dish');
@@ -62,7 +80,9 @@ const AddMenuItem = () => {
 						value={formData.title}
 						onChange={handleChange}
 					/>
+					<div className='error-message'>
 					{errors.title && <p className="error">{errors.title}</p>}
+					</div>
 				</label>
 				<label>
 					Beskrivning:
@@ -71,7 +91,9 @@ const AddMenuItem = () => {
 						value={formData.description}
 						onChange={handleChange}
 					/>
+					<div className='error-message'>
 					{errors.description && <p className="error">{errors.description}</p>}
+					</div>
 				</label>
 				<label>
 					Ingredienser:
@@ -80,7 +102,9 @@ const AddMenuItem = () => {
 						value={formData.ingredients}
 						onChange={handleChange}
 					/>
+					<div className='error-message'>
 					{errors.ingredients && <p className="error">{errors.ingredients}</p>}
+					</div>
 				</label>
 				<label>
 					Pris:
@@ -90,17 +114,21 @@ const AddMenuItem = () => {
 						value={formData.price}
 						onChange={handleChange}
 					/>
+					<div className='error-message'>
 					{errors.price && <p className="error">{errors.price}</p>}
+					</div>
 				</label>
 				<label>
 					Bildlänk:
 					<input
 						type="text"
-						name="imageUrl"
-						value={formData.imageUrl}
+						name="img"
+						value={formData.img}
 						onChange={handleChange}
 					/>
-					{errors.imageUrl && <p className="error">{errors.imageUrl}</p>}
+					<div className='error-message'>
+					{errors.img && <p>{errors.img}</p>}
+					</div>
 				</label>
 				<div className="form-actions">
 					<button className='cancel-button' type="button" onClick={handleCancel}>
