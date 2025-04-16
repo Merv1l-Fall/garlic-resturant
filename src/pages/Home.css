@@ -1,12 +1,17 @@
 html, body {
     margin: 0;
     padding: 0;
-    height: 100%;
+    height: 100%; 
+}
+
+body {
+    display: flex;
+    flex-direction: column;
 }
 
 .home {
     position: relative;
-    min-height: 100vh;
+    flex: 1;
     padding: 0;
     background-color: #FFFBD6;
     margin-top: 10px;
@@ -46,11 +51,9 @@ html, body {
 }
 
 .menu-section {
-    position: absolute;
-    top: 310px;
-    bottom: 0;
+    position: relative;
     width: 100%;
-    height: 80vh;
+    height: 100vh; 
 }
 
 .image-container {
@@ -59,7 +62,7 @@ html, body {
     background-size: cover;
     background-position: center;
     width: 100%;
-    height: 100%;
+    height: 100%; 
     display: flex;
     justify-content: center;
     align-items: center;
@@ -81,6 +84,7 @@ html, body {
 .menu-button:hover {
     background-color: #edd586;
 }
+
 
 @media (max-width: 750px) {
     .intro {
@@ -114,25 +118,50 @@ html, body {
 
 @media (max-width: 320px) {
     .home h1 {
-        font-size: 1.2rem;
+        font-size: 1.3rem;
+    }
+
+    .hero {
+        margin: 0;
+        width: 90%;
+        padding: 10px;
     }
 
     .hero p {
-        font-size: 1rem;
+        font-size: 1.1rem;
     }
 
     .menu-button {
         font-size: 1.5rem;
+        width: 180px;
     }
 
     .menu-section {
-        height: 60vh;
+        height: 40vh;
+        width: 100%;
+        margin: 0;
     }
 
     .image-container {
-        height: 90%;
+        height: 100%;
         background-size: cover;
-        margin-top: 40px;
+        margin-top: 10px;
         background-position: center;
     }
+
+    body {
+        display: flex;
+        flex-direction: column;
+        height: 100vh;
+    }
+
+    .home {
+        flex: 1;
+    }
+
+    footer {
+        margin-top: auto;
+    }
 }
+
+
