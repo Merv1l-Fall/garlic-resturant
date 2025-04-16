@@ -1,6 +1,7 @@
 import "./login.css";
 import { useLoginStore } from "../data/loginStore.js";
 import { useState } from "react";
+import { useNavigate } from "react-router";
 
 const Login = () => {
     const [password, setPassword] = useState(null);
@@ -8,12 +9,14 @@ const Login = () => {
     const toggleAdmin = useLoginStore((state) => state.toggleAdmin);
     const admin = useLoginStore((state) => state.admin);
     const [valid, setValid] = useState("");
+    const navigate = useNavigate();
 
     const handleLogIn = () => {
         if (password === "mums") {
             toggleAdmin();
             setError("");
             setValid("valid");
+            navigate("/edit-menu"); 
         } else {
             setError("Fel lösenord.");
             setValid("invalid");
