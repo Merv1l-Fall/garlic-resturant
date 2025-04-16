@@ -20,6 +20,9 @@ const router = createHashRouter([
             { path: "/menu", Component: Menu },
             { path: "/edit-menu", Component: EditMenu },
             { path: "/add-menu-item", Component: AddMenuItem },
+            { path: "/login", Component: Login },
+            { path: "/checkout", Component: Checkout },
+            
         ],
     },
 ]);
