@@ -7,7 +7,24 @@
 	display: flex;
 	flex-direction: column;
 	align-items: center;
-	
+
+	a{
+		text-decoration: none;
+	}
+
+	.return-button{
+		/* text-decoration: none; */
+		color: var(--dark-brown);
+		background: none;
+		border: 2px solid var(--dark-brown);
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		margin: 1rem;
+		width: auto;
+
+	}
+
 
 	button {
 		padding: 1rem;
@@ -15,16 +32,32 @@
 		border: none;
 		cursor: pointer;
 		width: 6rem;
+		transition: scale ease-in-out 0.2s;
+
+		&:disabled{
+			background-color: #ccc;
+   			cursor: not-allowed;
+		}
 	}
 
 	.cancel-button {
 		background-color: #f44336;
-		color: white;
+		
+		&:not(:disabled):hover{
+			background-color: #f02617;
+			scale: 1.1;
+		}
 	}
 
 	.submit-button {
 		background-color: var(--green);
-		color: white;
+	
+
+		&:not(:disabled):hover{
+			background-color: rgb(61, 131, 61);
+			scale: 1.1;
+		}
+
 	}
 
 	h1 {
@@ -76,7 +109,7 @@
 
 	.error-message {
 		min-height: 1rem;
-		color: red;
+		color: rgb(182, 25, 25);
 		font-size: 0.9rem;
 	}
 }

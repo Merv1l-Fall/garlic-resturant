@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import addMenuItemSchema from '../validation';
 import "./AddMenuItem.css";
 import useMenuStore from '../data/menuStore';
+import { Link } from 'react-router';
 // import { saveMenu } from '../data/fetchMenu';
 
 const AddMenuItem = () => {
@@ -15,11 +16,16 @@ const AddMenuItem = () => {
 	});
 
 	const [errors, setErrors] = useState({});
+	const [touched, setTouched] = useState(false);
 
 	const handleChange = (e) => {
 		const { name, value } = e.target;
 		setFormData({ ...formData, [name]: value });
 	};
+
+	const handleFocus = () => {
+        setTouched(true); // Set touched to true when any input is focused
+    };
 
 	const validateForm = () => {
 		const { error } = addMenuItemSchema.validate(formData, { abortEarly: false });
@@ -65,78 +71,103 @@ const AddMenuItem = () => {
 
 	const handleCancel = () => {
 		console.log('Cancelled adding new dish');
-		// TODO: Navigate back or reset the form
+		setFormData({
+			title: '',
+			description: '',
+			ingredients: '',
+			price: '',
+			img: '',
+		})
 	};
 
 	return (
 		<section className="add-menu-item">
+			
 			<h1>Ny maträtt</h1>
-			<form>
-				<label>
+			<form onSubmit={handleSubmit}>
+				<label htmlFor='title'>
 					Titel
 					<input
+						id='title'
 						type="text"
 						name="title"
 						value={formData.title}
 						onChange={handleChange}
+						onFocus={handleFocus}
 					/>
 					<div className='error-message'>
 					{errors.title && <p className="error">{errors.title}</p>}
 					</div>
 				</label>
-				<label>
+				<label htmlFor='description'>
 					Beskrivning:
 					<textarea
+						id='description'
 						name="description"
 						value={formData.description}
 						onChange={handleChange}
+						onFocus={handleFocus}
 					/>
 					<div className='error-message'>
 					{errors.description && <p className="error">{errors.description}</p>}
 					</div>
 				</label>
-				<label>
+				<label htmlFor='ingredients'>
 					Ingredienser:
 					<textarea
+						id='ingredients'
 						name="ingredients"
 						value={formData.ingredients}
 						onChange={handleChange}
+						onFocus={handleFocus}
 					/>
 					<div className='error-message'>
 					{errors.ingredients && <p className="error">{errors.ingredients}</p>}
 					</div>
 				</label>
-				<label>
+				<label htmlFor='price'>
 					Pris:
 					<input
+						id='price'
 						type="number"
 						name="price"
 						value={formData.price}
 						onChange={handleChange}
+						onFocus={handleFocus}
 					/>
 					<div className='error-message'>
 					{errors.price && <p className="error">{errors.price}</p>}
 					</div>
 				</label>
-				<label>
-					Bildlänk:
+				<label htmlFor='img'>
+					Länk till en bild:
 					<input
+						id='img'
 						type="text"
 						name="img"
 						value={formData.img}
 						onChange={handleChange}
+						onFocus={handleFocus}
 					/>
 					<div className='error-message'>
 					{errors.img && <p>{errors.img}</p>}
 					</div>
 				</label>
 				<div className="form-actions">
-					<button className='cancel-button' type="button" onClick={handleCancel}>
-						ångra
+					<button className='cancel-button' type="button" onClick={handleCancel} disabled={!touched}>
+						Rensa
 					</button>
-					<button className='submit-button' type="submit" onClick={handleSubmit}>Lägg till</button>
+					<button
+					 className='submit-button'
+					  type="submit"
+					   disabled={!touched}>
+						Lägg till
+					   </button>
 				</div>
 			</form>
+			<Link to="/edit-menu">
+			<button className='return-button'>Tillbaka till admin-menyn</button>
+			</Link>
 		</section>
 	);
 };
