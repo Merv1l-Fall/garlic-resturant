@@ -28,18 +28,19 @@ async function saveMenu(menuItems) {
 	}
 };
 
-async function loadMenu(setData) {
-	try {
-		const response = await fetch(`${url}?method=load&key=${key}`, {
-			method: "GET"
-		});
-		const data = await response.json()
-		const parsedData = JSON.parse(data)
-		console.log(parsedData)
-		setData(parsedData)
-	} catch(error){
-		console.error("fel vid laddning av meny " + error)
-	}
-};
+async function loadMenu() {
+    try {
+        const response = await fetch(`${url}?method=load&key=${key}`, {
+            method: "GET"
+        });
+        const data = await response.json();
+        const parsedData = JSON.parse(data);
+        console.log(parsedData);
+        return parsedData; // Return the parsed data
+    } catch (error) {
+        console.error("fel vid laddning av meny " + error);
+        throw error; // Re-throw the error to handle it in the calling function
+    }
+}
 
 export {loadMenu, saveMenu}

@@ -4,11 +4,13 @@
     align-items: center;
     border: 1px solid black;
     padding: 0.6rem;
+	width: 100%;
+	max-width: 40rem;
     min-width: 13rem;
 	max-height: 5.6rem;
 	min-height: 5.6rem;
 
-	overflow: hidden; /* Ensure content doesn't overflow during transition */
+	overflow: hidden;
     transition: max-height 0.3s ease-in-out, padding 0.3s ease-in-out;
 
 	button {
@@ -37,7 +39,6 @@
 .menu-item.editing {
     flex-direction: column;
     align-items: flex-start;
-    padding: 1rem;
 	max-height: 50rem;
     transition: max-height 0.3s ease-in-out, padding 0.3s ease-in-out;
 
@@ -78,10 +79,12 @@
 	min-height: 7rem;
 	max-height: 15rem;
 	resize: none;
+	/* width: 100%; */
 }
 
 .menu-actions {
     display: flex;
 	flex-direction: column;
     gap: 0.5rem;
+	/* width: 100%; */
 }
