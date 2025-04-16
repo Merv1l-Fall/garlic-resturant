@@ -109,14 +109,15 @@
 		button:active {
 			background-color: #000;
 		}
-		/*
+		
 		.ingredient-button {
 			display: flex;
 			justify-content: space-between;
 			gap: 1rem;
 			background-color:#FFF6A9;
 			color: #3a3a3a;
-		}*/
+			margin-bottom: 2em;
+		}
 	}
 	/* Mobilanpassning */
 @media (max-width: 768px) {
