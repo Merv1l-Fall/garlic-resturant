@@ -10,8 +10,7 @@ import EditMenu from "./pages/EditMenu.jsx";
 import Cart from "./pages/Cart.jsx";
 import Login from "./pages/Login.jsx";
 import Checkout from "./pages/Checkout.jsx";
-import CartItem from "./components/CartItem.jsx";
-
+import AddMenuItem from "./pages/AddMenuItem.jsx";
 
 const router = createHashRouter([
     {
@@ -21,8 +20,10 @@ const router = createHashRouter([
             { index: true, Component: Home },
             { path: "/menu", Component: Menu },
             { path: "/edit-menu", Component: EditMenu },
-			{ path: "/cart", Component: Cart }, 
-
+            { path: "/add-menu-item", Component: AddMenuItem },
+            { path: "/login", Component: Login },
+            { path: "/checkout", Component: Checkout },
+            
         ],
     },
 ]);
