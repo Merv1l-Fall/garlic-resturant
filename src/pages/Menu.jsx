@@ -59,7 +59,7 @@ const Menu = () => {
                                     <h2>Ingredienser</h2>
                                     <p>{selectedItem.ingredients}</p>
 									
-									<button className="ingredient-button">Stäng</button>
+									<button   className="ingredient-button" onClick={() => setSelectedItem(null)}>Stäng</button>
 									
 									
                                 </div>
