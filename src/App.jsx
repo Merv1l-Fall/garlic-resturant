@@ -15,7 +15,7 @@ function App() {
 	}, [loadMenuItems]);
     return (
         <div>
-            <Header /> {/*Header*/}
+            <Header />
             <main>
                 <Outlet />
 
