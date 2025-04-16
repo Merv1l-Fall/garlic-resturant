@@ -6,6 +6,7 @@ import Header from "./components/Header";
 import useMenuStore from "./data/menuStore";
 import { useEffect } from "react";
 import Menu from "./pages/Menu";
+import Footer from "./components/Footer";
 
 function App() {
 	const {loadMenuItems} = useMenuStore();
@@ -20,6 +21,7 @@ function App() {
                 <Outlet />
 
             </main>
+            <Footer />
         </div>
     );
 }
