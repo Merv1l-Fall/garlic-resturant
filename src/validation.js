@@ -11,9 +11,9 @@ const addMenuItemSchema = Joi.object({
         'string.empty': 'Ingredienser är obligatoriskt.',
     }),
     price: Joi.number().greater(0).required().messages({
-        'number.base': 'Pris måste vara ett nummer.',
-        'number.greater': 'Pris kan inte vara 0.',
         'any.required': 'Pris är obligatoriskt.',
+        'number.greater': 'Pris kan inte vara 0.',
+        'number.base': 'Pris måste vara ett nummer.',
     }),
     img: Joi.string().required().messages({
             'string.empty': 'Bildlänk är obligatoriskt.',
