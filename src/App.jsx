@@ -8,12 +8,9 @@ import Header from "./components/Header";
 function App() {
     return (
         <div>
-            <Header /> {/*Header*/}
+            <Header /> 
             <main>
                 <Outlet />
-                {/* <EditMenu /> */}
-                <AddMenuItem />
-                <Outlet /> {/*Home och Menu */}
             </main>
         </div>
     );
