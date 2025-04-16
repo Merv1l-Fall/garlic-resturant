@@ -12,6 +12,7 @@ import Login from "./pages/Login.jsx";
 import Checkout from "./pages/Checkout.jsx";
 import AddMenuItem from "./pages/AddMenuItem.jsx";
 
+
 const router = createHashRouter([
     {
         path: "/",
@@ -23,6 +24,8 @@ const router = createHashRouter([
             { path: "/add-menu-item", Component: AddMenuItem },
             { path: "/login", Component: Login },
             { path: "/checkout", Component: Checkout },
+            { path: "/cart", Component: Cart },
+
             
         ],
     },
