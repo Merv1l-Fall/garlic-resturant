@@ -1,9 +1,11 @@
-import { menuItems } from "../data/menuItems";
+import useMenuStore from "../data/menuStore";
 import "./Menu.css";
 import { useState, useRef, useEffect } from "react";
 
 
 const Menu = () => {
+	const {menuItems, loadMenuItems, removeMenuItem} = useMenuStore();
+	
 	const [selectedItem, setSelectedItem] = useState(null);
 	//const detailsRefs = useRef({});
 

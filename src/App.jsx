@@ -1,17 +1,24 @@
 import "./App.css";
-// import Menu from "./pages/Menu";
 import EditMenu from "./pages/EditMenu";
 import AddMenuItem from "./pages/AddMenuItem";
 import { Outlet } from "react-router";
 import Header from "./components/Header";
+import useMenuStore from "./data/menuStore";
+import { useEffect } from "react";
+import Menu from "./pages/Menu";
 
 function App() {
+	const {loadMenuItems} = useMenuStore();
+
+	useEffect(() => {
+		loadMenuItems();
+	}, [loadMenuItems]);
     return (
         <div>
-            <Header /> {/*Header*/}
+            <Header />
             <main>
                 <Outlet />
-               
+
             </main>
         </div>
     );

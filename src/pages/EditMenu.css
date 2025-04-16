@@ -1,12 +1,11 @@
 .edit-menu {
 	background-color: var(--background);
-	padding: 20px;
+	padding: 1rem;
 	font-family: Arial, sans-serif;
-	text-align: center;
 	display: flex;
 	flex-direction: column;
 	align-items: center;
-	max-width: 320px;
+	/* max-width: 320px; */
 
 	.back-button {
 		background: none;
@@ -34,9 +33,10 @@
 		min-width: 16rem;
 
 		p {
-			font-size: 1.5rem;
+			font-size: 1.2rem;
 			padding: 0;
 			margin: 0;
+			max-width: 70%;
 		}
 	}
 
