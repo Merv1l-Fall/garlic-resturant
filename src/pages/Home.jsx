@@ -1,5 +1,6 @@
 import React from "react";
 import "./home.css"; 
+import { Link } from "react-router";
 
 const Home = () => {
     return (
@@ -15,7 +16,9 @@ const Home = () => {
             {/* Bild med knapp */}
             <section className="menu-section">
                 <div className="image-container">
+					<Link to="/menu">
                     <button className="menu-button">Meny</button>
+					</Link>
                 </div>
             </section>
         </div>

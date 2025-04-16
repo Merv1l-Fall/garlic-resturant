@@ -4,7 +4,7 @@ import { useState, useRef, useEffect } from "react";
 
 
 const Menu = () => {
-	const {menuItems, loadMenuItems, removeMenuItem} = useMenuStore();
+	const {menuItems} = useMenuStore();
 	
 	const [selectedItem, setSelectedItem] = useState(null);
 	//const detailsRefs = useRef({});
