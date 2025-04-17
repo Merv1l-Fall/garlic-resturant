@@ -9,7 +9,7 @@
   .footer-content {
 	display: flex;
 	justify-content: space-between;
-	align-items: center;
+	align-items: flex-start;
 	flex-wrap: wrap;
 	max-width: 1000px;
 	margin: auto;
@@ -18,10 +18,14 @@
   .footer-info {
 	display: flex;
 	flex-direction: column;
-	gap: 1rem;
+	gap: 1.2rem;
 	font-family: 'Cormorant Garamond', serif;
 	font-size: 1.3rem;
 	color: #fff8e7;
+  }
+  
+  .footer-opening-hours {
+	line-height: 1.4;
   }
   
   .footer-divider {

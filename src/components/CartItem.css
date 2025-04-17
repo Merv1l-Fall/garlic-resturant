@@ -33,3 +33,25 @@
 	color: #a00000;
   }
   
+
+  .quantity-controls {
+	display: flex;
+	align-items: center;
+	gap: 0.5rem;
+	margin-top: 0.5rem;
+  }
+  
+  .quantity-controls button {
+	padding: 0.25rem 0.5rem;
+	font-size: 1rem;
+	border: none;
+	background-color: #e5e7eb;
+	border-radius: 4px;
+	cursor: pointer;
+	transition: background-color 0.2s;
+  }
+  
+  .quantity-controls button:hover {
+	background-color: #d1d5db;
+  }
+  

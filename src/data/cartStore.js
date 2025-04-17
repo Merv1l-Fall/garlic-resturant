@@ -11,7 +11,7 @@ const useCartStore = create((set) => ({
         "Spanska räkor stekta i olivolja med massor av vitlök, chili och persilja. Serveras ofta som tapas med bröd att doppa i den vitlöksdoftande oljan.",
       price: 109,
       img: "https://vivavinomat.se/wp-content/uploads/gambas-picantes.jpg",
-      quantity: 1
+      quantity: 1,
     },
     {
       id: 2,
@@ -20,12 +20,32 @@ const useCartStore = create((set) => ({
         "En rustik spansk soppa gjord på rostad vitlök, buljong, bröd och ibland ägg. Mustig, värmande och full av smak.",
       price: 105,
       img: "https://vegomagasinet.se/wp-content/uploads/2025/03/56.jpg",
-      quantity: 1
+      quantity: 1,
     },
   ],
+
   removeFromCart: (id) =>
     set((state) => ({
       cart: state.cart.filter((item) => item.id !== id),
+    })),
+
+  increaseQuantity: (id) =>
+    set((state) => ({
+      cart: state.cart.map((item) =>
+        item.id === id
+          ? { ...item, quantity: (item.quantity || 1) + 1 }
+          : item
+      ),
+    })),
+
+  decreaseQuantity: (id) =>
+    set((state) => ({
+      cart: state.cart
+        .map((item) =>
+          item.id === id
+            ? { ...item, quantity: Math.max((item.quantity || 1) - 1, 1) }
+            : item
+        ),
     })),
 }));
 
