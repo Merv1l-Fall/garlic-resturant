@@ -1,33 +1,36 @@
 import { Link } from "react-router";
 import useMenuStore from '../data/menuStore';
+import MenuItem from "../components/EditMenuItem";
 import "./EditMenu.css";
 
 const EditMenu = () => {
-    const {menuItems, removeMenuItem} = useMenuStore();
+    const {menuItems, removeMenuItem, editMenuItem} = useMenuStore();
+
+	const handleEdit = (updatedItem) => {
+        editMenuItem(updatedItem);
+    };
 
 	const handleRemove = (id) => {
 		removeMenuItem(id)
 	};
 
-    return (
+	return (
         <section className="edit-menu">
-            <button className="back-button">TILLBAKA</button>
+            <Link to="/add-menu-item">
+                <button className="add-button">Lägg till ny rätt</button>
+            </Link>
+            <h1>Meny</h1>
             <div className="menu-list">
                 {menuItems.map((item) => (
-                    <div key={item.id} className="menu-item">
-                        <p>{item.title}</p>
-                        <div className="menu-actions">
-                            <button onClick={() => console.log(item.id, "edit")}>Ändra</button>
-                            <button onClick={() => handleRemove(item.id)}>Ta bort</button>
-                        </div>
-                    </div>
+                    <MenuItem
+                        key={item.id}
+                        item={item}
+                        onEdit={handleEdit}
+                        onRemove={handleRemove}
+                    />
                 ))}
             </div>
-			<Link to="/add-menu-item">
-            <button className="add-button">
-                Lägg till ny rätt
-            </button>
-			</Link>
+            <button className="back-button">TILLBAKA</button>
         </section>
     );
 };
