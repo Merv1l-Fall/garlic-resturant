@@ -21,7 +21,6 @@
 		height: 2rem;
 		width: 4rem;
 		cursor: pointer;
-		transition: width 0.1s ease-in-out, transform 0.1s ease-in-out;
 		white-space: nowrap;
 		overflow-x: hidden;
 		font-family: 'Galdeano', serif;
