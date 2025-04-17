@@ -33,10 +33,16 @@
 	p{
 		font-size: 1rem;
 	}
-}
+
 
 .edit-form{
 	max-width: 40rem;
+}
+
+.error-message {
+	min-height: 1rem;
+	color: rgb(182, 25, 25);
+	font-size: 0.9rem;
 }
 
 .menu-item.editing {
@@ -101,4 +107,6 @@
 	&:hover {
 		background-color: #f02617;
 	}
+}
+
 }
