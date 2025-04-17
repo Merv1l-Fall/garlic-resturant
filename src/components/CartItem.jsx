@@ -14,14 +14,12 @@ function CartItem({ item }) {
           {(item.quantity || 1)} × {item.price} kr
         </p>
       </div>
-          {/*<button
-          onClick={() => removeFromCart(item.id)}
-          className="text-red-600 hover:underline text-sm"
-          >
-          Ta bort
-          </button>
-          */}
-
+      <button
+        onClick={() => removeFromCart(item.id)}
+        className="text-red-600 hover:underline text-sm"
+      >
+        
+      </button>
     </div>
   );
 }
