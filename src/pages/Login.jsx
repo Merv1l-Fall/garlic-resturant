@@ -31,7 +31,11 @@ const Login = () => {
     };
 
     const handleEnter = (e) => {
-        if (e.key === "Enter" && !admin) {
+        if (!password){
+            setError("Fyll i lösenord.");
+            setValid("invalid");
+
+        }else if (e.key === "Enter" && !admin) {
             handleLogIn();
         }
     };
