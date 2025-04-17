@@ -8,8 +8,10 @@ const Header = () => {
   return (
     <header className="header">
       <div className="header-left">
-        <img src={GarlicIcon} alt="Garlic Icon" className="garlic-icon" />
-        <h1>KLYFTAN</h1>
+        <Link to="/" className="logo-link">  
+          <img src={GarlicIcon} alt="Garlic Icon" className="garlic-icon" />
+          <h1>KLYFTAN</h1>
+        </Link>
       </div>
       <Link to="/cart">
         <img src={CartIcon} alt="Cart Icon" className="cart-icon" />
