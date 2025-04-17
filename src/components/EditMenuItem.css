@@ -21,6 +21,9 @@
 		width: 4rem;
 		transition: scale ease-in-out 0.2s;
 		cursor: pointer;
+		transition: width 0.1s ease-in-out;
+		white-space: nowrap;
+		overflow-x: hidden;
 
 		&:hover{
 			scale: 1.1;
@@ -86,5 +89,16 @@
     display: flex;
 	flex-direction: column;
     gap: 0.5rem;
-	/* width: 100%; */
+	align-items:end;
+	
+}
+
+.menu-actions .confirm-remove{
+	background-color:#f44336;
+	width: 6rem;
+	
+
+	&:hover {
+		background-color: #f02617;
+	}
 }
