@@ -79,4 +79,20 @@
 		color: red;
 		font-size: 0.9rem;
 	}
+
+	.back-button {
+		display: inline-block;
+		padding: 1rem;
+		font-size: 1rem;
+		background-color: #3b1f1f;
+		color: white;
+		text-decoration: none;
+		font-weight: bold;
+		margin-left: 10px;
+		width: 6rem;
+	  }
+	  
+	  .back-button:hover {
+		background-color: #6c3f3f;
+	  }
 }
