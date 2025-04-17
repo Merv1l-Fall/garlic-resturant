@@ -40,10 +40,10 @@
 		font-family: 'Italiana';
 
 		&:hover {
-			background-color: #3a3a3a;
+			background-color:#261717;
 		}
 		&:active {
-			background-color: #1a1a1a;
+			background-color: #261717;
 		}
 		.text-content {
 			flex: 1;
@@ -68,15 +68,16 @@
 			max-height: 400px; /* om du vill begränsa höjd */
 			object-fit: cover;
 			border-radius: 2px;
+			margin-top: 2.4em;
 		  }
-		  /*
+		  
 		.img-content p{
 			font-size: 1.7em;
 			text-align: center;
 			margin: 0;
 			margin-top: 6.5em;
 			
-		}*/
+		}
 		.price{
 			font-size: 1.9em;
 			margin-top: 1em;
@@ -142,7 +143,53 @@
 		
 	}
 	/* Mobilanpassning */
-@media (max-width: 768px) {
+	@media (min-width: 320px) and (max-width: 600px) {
+		.text-content {
+			flex: 1;
+			text-align: center; /* Centrera texten */
+		}
+		.img-content {
+			display: flex;
+			flex-direction: column;
+			align-items: center; /* Centrera bilden */
+			gap: 0.5rem;
+			max-width: 100%; /* Gör bilden responsiv */
+			flex-shrink: 0;
+		}
+		.ingredient-button{
+			flex-direction: column; /* Stapla text och bild 
+			ovanpå varandra */
+			align-items: center; /* Centrera innehållet */
+			padding: 2em; /* Minska padding */
+			font-size: 1.5em; /* Minska textstorlek */
+			gap: 1rem; /* Minska gap mellan text och bild */
+			justify-self: center;
+		}
+		li {
+			flex-direction: column; /* Stapla text och bild ovanpå varandra */
+			align-items: center; /* Centrera innehållet */
+			padding: 2em; /* Minska padding */
+			font-size: 1.5em; /* Minska textstorlek */
+			gap: 1rem; /* Minska gap mellan text och bild */
+		}
+		h1 {
+			font-size: 2em; /* Minska rubrikens storlek */
+			padding: 0.5em; /* Minska padding */
+			
+		}
+		li {
+			padding: 2em; /* Minska padding */
+			font-size: 1.2em; /* Minska textstorlek */
+			gap: 1rem; /* Minska gap mellan text och bild */
+		}
+		li img {
+			max-width: 100%; /* Gör bilden responsiv */
+			max-height: 200px; /* Max höjd för bilden */
+		}
+	}
+
+
+@media (min-width: 600px) and (max-width: 800px) {
 	li {
 	  flex-direction: column; /* Stapla text och bild ovanpå varandra */
 	  align-items: flex-start; /* vänsterjustera */
@@ -155,4 +202,44 @@
 	}
 
   }
+@media (min-width: 800px) and (max-width: 1000px) {
+	li {
+	  flex-direction: row; /* Återgå till radlayout */
+	  align-items: center; /* Centrera innehållet */
+	}
+  
+	li img {
+	  width: 100%; /* Gör bilden bredare på mobil */
+	  max-width: 100px; /* Max så den inte blir jättestor */
+	  margin-top: 1rem;
+	}
+  
+	li {
+	  padding: 2em; /* Minska padding */
+	  font-size: 1.5em; /* Minska textstorlek */
+	  gap: 1rem; /* Minska gap mellan text och bild */
+	}
+  
+	h1 {
+	  font-size: 2em; /* Minska rubrikens storlek */
+	  padding: 0.5em; /* Minska padding */
+	}
+  
+	li {
+	  padding: 2em; /* Minska padding */
+	  font-size: 1.2em; /* Minska textstorlek */
+	  gap: 1rem; /* Minska gap mellan text och bild */
+	}
+  
+	li img {
+	  max-width: 100%; /* Gör bilden responsiv */
+	  max-height: 200px; /* Max höjd för bilden */
+	}
+  
+  }
+  
+
+@media (min-width: 1400px) {
+
+}
 }
