@@ -6,24 +6,21 @@ const useMenuStore = create((set, get) => ({
 
     loadMenuItems: async () => {
         try {
-            await loadMenu((data) => set({ menuItems: data }));
-        } catch (error) {
-            console.error("fel vid laddning av meny " + error);
-        }
-    },
+			const data = await loadMenu();
+			set({ menuItems: data });
+		} catch (error) {
+			console.error("fel vid laddning av meny " + error);
+		}
+	},
 
     saveMenuItem: async (newItem) => {
         try {
-            // Fetch the latest menu items from the API
             const latestMenuItems = await loadMenu();
 
-            // Add the new item to the latest menu items
             const updatedMenuItems = [...latestMenuItems, newItem];
 
-            // Update the local state
             set({ menuItems: updatedMenuItems });
-
-            // Save the updated menu items to the API
+			
             await saveMenu(updatedMenuItems);
         } catch (error) {
             console.error("fel vid sparande av meny " + error);
@@ -32,17 +29,13 @@ const useMenuStore = create((set, get) => ({
 
 	editMenuItem: async (updatedItem) => {
 		try {
-			
 			const latestMenuItems = await loadMenu();
-	
 			
 			const updatedMenuItems = latestMenuItems.map((item) =>
 				item.id === updatedItem.id ? updatedItem : item
 			);
 	
-			
 			set({ menuItems: updatedMenuItems });
-	
 			
 			await saveMenu(updatedMenuItems);
 		} catch (error) {

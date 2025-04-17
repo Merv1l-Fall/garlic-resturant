@@ -50,5 +50,5 @@ const menuItems = [
 		ingridients: "Bröd, vitlökssmör"
 	}
 ];
-  export {menuItems}
+//   export {menuItems}
 	

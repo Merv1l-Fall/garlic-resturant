@@ -1,0 +1,110 @@
+.menu-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border: 1px solid black;
+    padding: 0.6rem;
+	width: 100%;
+	max-width: 40rem;
+    min-width: 13rem;
+	max-height: 5.6rem;
+	min-height: 5.6rem;
+
+	overflow: hidden;
+    transition: max-height 0.3s ease-in-out, padding 0.3s ease-in-out;
+
+	button {
+		background: none;
+		padding: 0.2rem 0.5rem;
+		border: 1px solid var(--dark-brown);
+		height: 2rem;
+		width: 4rem;
+		transition: scale ease-in-out 0.2s;
+		cursor: pointer;
+		transition: width 0.1s ease-in-out;
+		white-space: nowrap;
+		overflow-x: hidden;
+
+		&:hover{
+			scale: 1.1;
+		}
+	}
+
+	p{
+		font-size: 1rem;
+	}
+}
+
+.edit-form{
+	width: 100%;
+}
+
+.error-message {
+		min-height: 1rem;
+		color: rgb(182, 25, 25);
+		font-size: 0.9rem;
+	}
+
+.menu-item.editing {
+    flex-direction: column;
+    align-items: flex-start;
+	max-height: 50rem;
+    transition: max-height 0.3s ease-in-out, padding 0.3s ease-in-out;
+
+	.menu-actions{
+		width: 100%;
+		flex-direction: row;
+		justify-content: center;
+
+		.save-btn{
+			background-color: var(--green);
+
+			&:hover{
+				background-color: rgb(61, 131, 61);
+			}
+		}
+
+		.cancel-btn{
+			background-color: #f44336;
+
+			&:hover{
+				background-color: #f02617;
+			}
+		}
+	}
+}
+
+.menu-item input,
+.menu-item textarea {
+    width: 100%;
+    margin-bottom: 0.5rem;
+    padding: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 0.2rem;
+}
+
+.menu-item textarea {
+	height: auto;
+	min-height: 7rem;
+	max-height: 15rem;
+	resize: none;
+	/* width: 100%; */
+}
+
+.menu-actions {
+    display: flex;
+	flex-direction: column;
+    gap: 0.5rem;
+	align-items:end;
+	
+}
+
+.menu-actions .confirm-remove{
+	background-color:#f44336;
+	width: 6rem;
+	
+
+	&:hover {
+		background-color: #f02617;
+	}
+}
