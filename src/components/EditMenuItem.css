@@ -33,17 +33,17 @@
 	p{
 		font-size: 1rem;
 	}
-
+}
 
 .edit-form{
-	max-width: 40rem;
+	width: 100%;
 }
 
 .error-message {
-	min-height: 1rem;
-	color: rgb(182, 25, 25);
-	font-size: 0.9rem;
-}
+		min-height: 1rem;
+		color: rgb(182, 25, 25);
+		font-size: 0.9rem;
+	}
 
 .menu-item.editing {
     flex-direction: column;
@@ -107,6 +107,4 @@
 	&:hover {
 		background-color: #f02617;
 	}
-}
-
 }
