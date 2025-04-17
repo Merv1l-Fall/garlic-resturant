@@ -1,10 +1,16 @@
 import React from 'react';
 import './Header.css';
 import GarlicIcon from './lucide-lab_garlic.png';
-import CartIcon from './cart.png';  
-import { Link } from 'react-router'; 
+import CartIcon from './cart.png';
+import { Link, useLocation } from 'react-router-dom';
+import { useCartStore } from "../data/cartStore";  
 
 const Header = () => {
+  const cart = useCartStore((state) => state.cart);
+  const totalItems = cart.reduce((sum, item) => sum + (item.quantity || 1), 0);
+  const location = useLocation();
+  const showCartCount = location.pathname === "/menu" || location.pathname === "/cart";
+
   return (
     <header className="header">
       <div className="header-left">
@@ -13,14 +19,15 @@ const Header = () => {
           <h1>KLYFTAN</h1>
         </Link>
       </div>
-      <Link to="/cart">
+
+      <Link to="/cart" className="cart-link">
         <img src={CartIcon} alt="Cart Icon" className="cart-icon" />
+        {showCartCount && totalItems > 0 && (
+          <span className="cart-count">{totalItems}</span>
+        )}
       </Link>
     </header>
   );
 };
 
 export default Header;
-
-
-
