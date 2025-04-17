@@ -48,20 +48,14 @@ const Menu = () => {
                             <h2>{item.title}</h2>
                             <p>{item.description}</p>
 							<p className="price">{item.price} kr</p>
-							<button onClick={() => addToCart(item)} className="ingredient-button">Lägg till i beställning</button>
+							<button onClick={() => addToCart(item)} className="order-button">Lägg till i beställning</button>
 							<div>
-							<button onClick={() => handleClick(item)}>Tryck för mer info</button>
+							<button className="ingredient-button" onClick={() => handleClick(item)}>Tryck för mer info</button>
 							{selectedItem?.id === item.id && (
-                                <div
-                                    className="item-details"
-                                   /* ref={(el) => (detailsRefs.current[item.id] = el)}*/
-                                >
+                                <div className="item-details">
                                     <h2>Ingredienser</h2>
                                     <p>{selectedItem.ingredients}</p>
-									
-									<button   className="ingredient-button" onClick={() => setSelectedItem(null)}>Stäng</button>
-									
-									
+									<button className="close-button" onClick={() => setSelectedItem(null)}>Stäng</button>
                                 </div>
                             )}
 							</div>
