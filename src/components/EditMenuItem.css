@@ -9,6 +9,7 @@
     min-width: 13rem;
 	max-height: 5.6rem;
 	min-height: 5.6rem;
+	font-family: 'Galdeano', serif;
 
 	overflow: hidden;
     transition: max-height 0.3s ease-in-out, padding 0.3s ease-in-out;
@@ -19,11 +20,12 @@
 		border: 1px solid var(--dark-brown);
 		height: 2rem;
 		width: 4rem;
-		transition: scale ease-in-out 0.2s;
 		cursor: pointer;
-		transition: width 0.1s ease-in-out;
+		transition: width 0.1s ease-in-out, transform 0.1s ease-in-out;
 		white-space: nowrap;
 		overflow-x: hidden;
+		font-family: 'Galdeano', serif;
+		font-size: 1rem;
 
 		&:hover{
 			scale: 1.1;
@@ -81,6 +83,8 @@
     padding: 1rem;
     border: 1px solid #ccc;
     border-radius: 0.2rem;
+	font-family: 'Galdeano', serif;
+	font-size: 1rem;
 }
 
 .menu-item textarea {
@@ -88,7 +92,6 @@
 	min-height: 7rem;
 	max-height: 15rem;
 	resize: none;
-	/* width: 100%; */
 }
 
 .menu-actions {

@@ -30,7 +30,9 @@ const EditMenu = () => {
                     />
                 ))}
             </div>
-            <button className="back-button">TILLBAKA</button>
+			<Link to="/#">
+            	<button className="back-button">Logga ut</button>
+			</Link>
         </section>
     );
 };

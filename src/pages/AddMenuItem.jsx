@@ -17,6 +17,7 @@ const AddMenuItem = () => {
 
 	const [errors, setErrors] = useState({});
 	const [touched, setTouched] = useState(false);
+	const [ isItemAdded, setIsItemAdded] = useState(false);
 
 	const handleChange = (e) => {
 		const { name, value } = e.target;
@@ -52,10 +53,11 @@ const AddMenuItem = () => {
 		// Add the new item to the store or API
 		const newMenuItem = {
 			...formData,
-			id: crypto.randomUUID(), // Generate a unique ID for the new item
+			id: crypto.randomUUID(),
 		};
 	
 		saveMenuItem(newMenuItem);
+		
 	
 		// Reset the form after submission
 		setFormData({
@@ -67,6 +69,11 @@ const AddMenuItem = () => {
 		});
 	
 		setErrors({});
+		setIsItemAdded(true)
+		setTouched(false)
+		const timeout = setTimeout(() => {
+			setIsItemAdded(false)
+		}, 5000)
 	};
 
 	const handleCancel = () => {
@@ -78,11 +85,20 @@ const AddMenuItem = () => {
 			price: '',
 			img: '',
 		})
+		setTouched(false)
 	};
 
 	return (
 		<section className="add-menu-item">
 			
+			{isItemAdded ? (
+				<div className='show-confirm'>
+					<h1>Maträtt sparad!</h1>
+					<button onClick={() => setIsItemAdded(false)} className='add-more-button'>Skapa en till?</button>
+				</div>
+			) : (
+			<div className='show-form'>
+
 			<h1>Ny maträtt</h1>
 			<form onSubmit={handleSubmit}>
 				<label htmlFor='title'>
@@ -165,6 +181,8 @@ const AddMenuItem = () => {
 					   </button>
 				</div>
 			</form>
+			</div>)}
+			
 			<Link to="/edit-menu">
 			<button className='return-button'>Tillbaka till admin-menyn</button>
 			</Link>

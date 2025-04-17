@@ -1,12 +1,20 @@
 .add-menu-item {
 	background-color: #fdf6e3;
 	padding: 1rem;
-	font-family: Arial, sans-serif;
+	font-family: 'Galdeano', serif;
 	text-align: center;
 	height: 100%;
 	display: flex;
 	flex-direction: column;
 	align-items: center;
+	font-size: 1.2rem;
+
+	.show-form{
+		width: 100%;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+	}
 
 	a{
 		text-decoration: none;
@@ -54,7 +62,7 @@
 	
 
 		&:not(:disabled):hover{
-			background-color: rgb(61, 131, 61);
+			background-color: #3d833d;
 			scale: 1.1;
 		}
 
@@ -63,6 +71,7 @@
 	h1 {
 		font-size: 1.5rem;
 		margin-bottom: 1.2rem;
+		font-family: 'Italiana', serif;
 	}
 
 	form {
@@ -90,6 +99,7 @@
 		padding: 0.5rem;
 		border: 1px solid black;
 		font-size: 1rem;
+		font-family: 'Galdeano', serif;
 	}
 
 	input{
@@ -128,4 +138,22 @@
 	  .back-button:hover {
 		background-color: #6c3f3f;
 	  }
+
+	.show-confirm{
+		display: flex;
+		flex-direction: column;
+		gap: 10rem;
+		margin-bottom: 4rem;
+		margin-top: 4rem;
+
+		.add-more-button{
+			width: 10rem;
+			background-color: var(--green);
+
+			&:hover {
+				scale: 1.1;
+				background-color: #3d833d;
+			}
+		}
+	}
 }
