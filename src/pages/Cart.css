@@ -57,8 +57,25 @@
 	font-weight: bolder;
   }
 
-
-
+  .back-button {
+	margin-top: 2rem; 
+	text-align: center; 
+  }
+  
+  .back-link {
+	padding: 1rem 2rem;
+	background-color: #3b1f1f;
+	color: white;
+	text-decoration: none;
+	border-radius: 0.5rem;
+	font-weight: bold;
+	font-size: 1.2rem;
+  }
+  
+  .back-link:hover {
+	background-color: #6c3f3f;
+  }
+  
 
 
 

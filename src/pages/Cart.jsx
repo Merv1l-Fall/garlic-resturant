@@ -32,7 +32,9 @@ function Cart() {
           </div>
 		  <p className="thank-you">Tack för din beställning!</p>
 
-         
+      <div className="back-button">
+        <Link to="/" className="back-link">Tillbaka</Link>
+      </div>
         </>
       )}
     </div>

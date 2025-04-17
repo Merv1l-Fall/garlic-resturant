@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import addMenuItemSchema from '../validation';
 import "./AddMenuItem.css";
 import useMenuStore from '../data/menuStore';
+import { Link } from "react-router";
 // import { saveMenu } from '../data/fetchMenu';
 
 const AddMenuItem = () => {
@@ -135,6 +136,9 @@ const AddMenuItem = () => {
 						ångra
 					</button>
 					<button className='submit-button' type="submit" onClick={handleSubmit}>Lägg till</button>
+					<Link to="/Edit-Menu" className="back-button">
+					Tillbaka
+					</Link>
 				</div>
 			</form>
 		</section>
