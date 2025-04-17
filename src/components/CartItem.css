@@ -1,0 +1,35 @@
+
+
+.cart-item {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	background-color: #f3f4f6;
+	padding: 1rem;
+	border-radius: 0.5rem;
+	box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+  }
+  
+  .cart-item-title {
+	font-weight: 600;
+	color: #333;
+  }
+  
+  .cart-item-info {
+	font-size: 0.875rem;
+	color: #666;
+  }
+  
+  .remove-button {
+	color: #dc2626;
+	font-size: 0.875rem;
+	cursor: pointer;
+	background: none;
+	border: none;
+	transition: color 0.3s ease;
+  }
+  
+  .remove-button:hover {
+	color: #a00000;
+  }
+  

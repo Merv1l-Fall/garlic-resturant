@@ -1,60 +1,79 @@
-
-body {
-    font-family: 'Italiana', serif;
+html, body {
     margin: 0;
     padding: 0;
-    background-color: #FFFBD6;
+    height: 100%; 
+}
+
+body {
+    display: flex;
+    flex-direction: column;
 }
 
 .home {
-    padding: 0px;
+    position: relative;
+    flex: 1;
+    padding: 0;
+    background-color: #FFFBD6;
+    margin-top: 10px;
+}
+
+.intro {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin: 50px 25px 30px 25px;
+    flex-wrap: wrap;
 }
 
 .home h1 {
-    font-size: 2rem;
+    font-family: 'Italiana', serif;
+    font-size: 98px;
     color: #020202;
-    text-align: center;
+    text-align: left;
     line-height: 1.3;
+    flex: 1 1 40%;
 }
 
 .hero {
-    text-align: center;
-    padding: 15px 12px;
     border: 2px solid black;
-    margin: 0 25px 10px 25px;
+    padding: 40px 40px;
+    text-align: center;
+    flex: 1 1 30%;
+    box-sizing: border-box;
+    margin: 0 45px auto;
 }
 
 .hero p {
-    font-size: 1rem;
-    color: #000000;
-    width: 100%;
-    margin: 0 auto;
-    text-align: center;
+    font-size: 24px;
+    margin: 10px;
+    color: #000;
+    font-family: 'Galdeano', serif;
 }
 
 .menu-section {
     position: relative;
-    text-align: center;
+    width: 100%;
+    height: 100vh; 
 }
 
 .image-container {
     background-image: url('https://images-ext-1.discordapp.net/external/VXshl_X6vns-YQffvfxtp4ej39GPvY9AeeHBc2YHUHw/https/storage.googleapis.com/gen-atmedia/3/2019/01/df3b953314d7ee138caaa14b73548a407652fc71.jpeg?format=webp&width=744&height=930');
+    background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
-    height: 50vh;
+    width: 100%;
+    height: 100%; 
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 100%;
     margin: 0;
-    padding: 0;
 }
 
 .menu-button {
     background-color: #FFF6A9;
-    border: none;
-    padding: 15px 60px;
-    font-size: 2rem;
+    border: black 1px solid;
+    padding: 25px 100px;
+    font-size: 5rem;
     color: rgb(0, 0, 0);
     cursor: pointer;
     font-family: 'Italiana', serif;
@@ -63,76 +82,95 @@ body {
 }
 
 .menu-button:hover {
-    background-color: #F8E4A1; 
+    background-color: #edd586;
 }
 
-/* För större skärmar (750px) */
-@media (min-width: 750px) {
-    .hero h1 {
-        font-size: 2.2rem; 
-    }
-
-    .hero p {
-        font-size: 1.1rem; 
-    }
-
-    .menu-section {
-        padding: 30px;
-    }
-
-    .image-container {
-        height: 55vh; 
-    }
-
-    .menu-button {
-        font-size: 2.2rem;
-        padding: 15px 65px;
-    }
-}
-
-/* För stora skärmar (1100px) */
-@media (min-width: 1100px) {
+@media (width: 1100px) {
     .home h1 {
-        font-size: 2.5rem; 
-    }
-
-    .hero p {
-        font-size: 1.2rem; 
-    }
-
-    .menu-section {
-        padding: 50px;
-    }
-
-    .image-container {
-        height: 60vh;
-    }
-
-    .menu-button {
-        font-size: 2.5rem;
-        padding: 20px 70px;
+        font-size: 4.7rem;
+        margin-bottom: 20px;
+        margin: 80px auto;
+        text-align: center;
     }
 }
 
-/* För mindre skärmar (320px och under) */
-@media (min-width: 320px) {
+
+@media (max-width: 750px) {
+    .intro {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        margin: 20px;
+    }
+
     .home h1 {
-        font-size: 30px; 
+        font-size: 2rem;
+        margin-bottom: 20px;
+        text-align: center;
     }
 
-    .hero p {
-        font-size: 18px; 
-    }
-
-    .image-container {
-        height: 40vh; 
-        padding: 0;
+    .hero {
         margin: 0;
-        width: 100%;
+        width: 90%;
+        padding: 20px;
+    }
+
+    .hero p {
+        font-size: 1rem;
     }
 
     .menu-button {
-        font-size: 3rem; 
-        padding: 8px 55px; 
+        font-size: 1.8rem;
+        padding: 10px 35px;
     }
 }
+
+@media (max-width: 320px) {
+    .home h1 {
+        font-size: 1.3rem;
+    }
+
+    .hero {
+        margin: 0;
+        width: 90%;
+        padding: 10px;
+    }
+
+    .hero p {
+        font-size: 1.1rem;
+    }
+
+    .menu-button {
+        font-size: 1.5rem;
+        width: 180px;
+    }
+
+    .menu-section {
+        height: 40vh;
+        width: 100%;
+        margin: 0;
+    }
+
+    .image-container {
+        height: 100%;
+        background-size: cover;
+        margin-top: 10px;
+        background-position: center;
+    }
+
+    body {
+        display: flex;
+        flex-direction: column;
+        height: 100vh;
+    }
+
+    .home {
+        flex: 1;
+    }
+
+    footer {
+        margin-top: auto;
+    }
+}
+
+

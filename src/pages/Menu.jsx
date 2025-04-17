@@ -1,11 +1,12 @@
 import useMenuStore from "../data/menuStore";
 import "./Menu.css";
 import { useState, useRef, useEffect } from "react";
+import { useCartStore } from "../data/cartStore";
 
 
 const Menu = () => {
-	const {menuItems} = useMenuStore();
-	
+	const {menuItems, loadMenuItems, removeMenuItem} = useMenuStore();
+	const addToCart = useCartStore((state) => state.addToCart);
 	const [selectedItem, setSelectedItem] = useState(null);
 	//const detailsRefs = useRef({});
 
@@ -47,6 +48,8 @@ const Menu = () => {
                             <h2>{item.title}</h2>
                             <p>{item.description}</p>
 							<p className="price">{item.price} kr</p>
+							<button onClick={() => addToCart(item)} className="ingredient-button">Lägg till i beställning</button>
+							<div>
 							<button onClick={() => handleClick(item)}>Tryck för mer info</button>
 							{selectedItem?.id === item.id && (
                                 <div
@@ -56,11 +59,12 @@ const Menu = () => {
                                     <h2>Ingredienser</h2>
                                     <p>{selectedItem.ingredients}</p>
 									
-									<button className="ingredient-button">Stäng</button>
-									<button className="ingredient-button">Lägg till i beställning</button>
+									<button   className="ingredient-button" onClick={() => setSelectedItem(null)}>Stäng</button>
+									
 									
                                 </div>
                             )}
+							</div>
                         </div>
                         <div className="img-content">
                             <img src={item.img} alt={item.title} />

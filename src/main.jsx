@@ -1,3 +1,4 @@
+
 import { StrictMode } from "react";
 import { createRoot } from "react-dom/client";
 import { RouterProvider, createHashRouter } from "react-router";
@@ -6,10 +7,11 @@ import App from "./App.jsx";
 import Home from "./pages/Home.jsx";
 import Menu from "./pages/Menu.jsx";
 import EditMenu from "./pages/EditMenu.jsx";
-
+import Cart from "./pages/Cart.jsx";
 import Login from "./pages/Login.jsx";
 import Checkout from "./pages/Checkout.jsx";
 import AddMenuItem from "./pages/AddMenuItem.jsx";
+
 
 const router = createHashRouter([
     {
@@ -22,6 +24,8 @@ const router = createHashRouter([
             { path: "/add-menu-item", Component: AddMenuItem },
             { path: "/login", Component: Login },
             { path: "/checkout", Component: Checkout },
+            { path: "/cart", Component: Cart },
+
             
         ],
     },
