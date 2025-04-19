@@ -1,6 +1,6 @@
 
-// CartItem.js
-import { useCartStore } from '../data/cartStore'; // inam dorost
+
+import { useCartStore } from '../data/cartStore'; 
 import './CartItem.css';
 
 function CartItem({ item }) {

@@ -3,6 +3,9 @@ import { useCartStore } from "../data/cartStore";
 import CartItem from "../components/CartItem";
 import { Link } from "react-router";
 
+
+
+
 import './cart.css'; 
 
 function Cart() {
@@ -31,7 +34,7 @@ function Cart() {
             Totalt: {total} kr
           </div>
 		  <p className="thank-you">Tack för din beställning!</p>
-
+		
          
         </>
       )}
