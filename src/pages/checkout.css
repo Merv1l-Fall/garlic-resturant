@@ -2,6 +2,7 @@
     .receipt {
         display: flex;
         flex-direction: column;
+        font-size: larger;
         gap: 1rem;
         padding: 2rem;
         background-color: #fffbd6;
@@ -10,18 +11,30 @@
         h2 {
             align-self: center;
         }
+
+        h4 {
+            align-self: center;
+        }
         .items {
             .items-header {
                 display: flex;
                 justify-content: space-between;
+                font-weight: bold;
                 padding: 0.5rem 0;
                 border-bottom: 1px solid #eaeaea;
+
             }
             .item {
                 display: flex;
                 justify-content: space-between;
                 padding: 0.5rem 0;
                 border-bottom: 1px solid #eaeaea;
+
+                p{
+            
+                    max-width: 4rem;
+
+                }
             }
         }
 
@@ -33,8 +46,7 @@
             display: flex;
             flex-direction: column;
             align-items: flex-end;
-            border-top: 1px solid #eaeaea;
-            font-weight: bold;
+    
         }
 
         button {
@@ -44,6 +56,29 @@
         }
         button:hover {
             background-color: #fdbf6e;
+        }
+    }
+}
+
+@media (max-width: 768px) {
+    .checkout {
+        .receipt {
+            padding: 0;
+            font-size: large;
+            gap: 0.5rem;
+            h2 {
+                font-size: 1.5rem;
+            }
+            h4 {
+                font-size: 1.2rem;
+            }
+            button
+            {
+                margin: 2rem;
+            }
+            .total{
+                margin:2rem;
+            }
         }
     }
 }
