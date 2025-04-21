@@ -2,6 +2,7 @@ import "./login.css";
 import { useLoginStore } from "../data/loginStore.js";
 import { useState } from "react";
 import { useNavigate } from "react-router";
+import EditMenu from "./EditMenu.jsx";
 
 const Login = () => {
     const [password, setPassword] = useState(null);
@@ -16,7 +17,7 @@ const Login = () => {
             toggleAdmin();
             setError("");
             setValid("valid");
-            navigate("/edit-menu"); 
+            // navigate("/edit-menu"); 
         } else {
             setError("Fel lösenord.");
             setValid("invalid");
@@ -40,7 +41,9 @@ const Login = () => {
         }
     };
 
-    return (
+    return admin ? (
+        <EditMenu />
+    ) : (
         <div className="login">
             <div className="login-box">
                 {!admin ? (
