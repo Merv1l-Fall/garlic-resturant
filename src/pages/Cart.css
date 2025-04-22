@@ -1,4 +1,4 @@
-/* Lägger till en minsta höjd för att hålla footer längst ner */
+
 html, body {
 	height: 100%;
 	margin: 0;
@@ -12,7 +12,7 @@ html, body {
 	border-radius: 16px;
 	box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
 	font-family: 'Galdeano', sans-serif;
-	min-height: 80vh; /* gör att varukorgen tar upp minst 80% av skärmen */
+	min-height: 80vh; 
 	display: flex;
 	flex-direction: column;
 	justify-content: space-between;
@@ -124,6 +124,12 @@ html, body {
 	margin-top: 250px;
 	font-weight: bold;
   }
+
+  .remove-icon {
+	width: 13px;  
+	height: 13px;
+  }
+  
 
   /* tillbaka o beställ-knappa  */
 	.button-style {
