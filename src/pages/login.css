@@ -8,7 +8,7 @@
     .login-box {
         margin: 2rem;
         padding: 1rem;
-        min-height: 350px;
+        min-height: 315px;
         width: 300px;
         display: flex;
         flex-direction: column;
