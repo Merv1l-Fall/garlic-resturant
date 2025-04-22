@@ -1,4 +1,4 @@
-/* Utgångsläget: Desktop (bredare än 750px) */
+
 html, body {
     margin: 0;
     padding: 0;
@@ -88,7 +88,6 @@ body {
 }
 
 
-/* Surfplattor & små skärmar — max 750px */
 @media (max-width: 750px) {
     .intro {
         flex-direction: column;
@@ -123,7 +122,6 @@ body {
     }
 }
 
-/* Mobil extra liten — max 320px */
 @media (max-width: 320px) {
     .intro h1 {
         font-size: 1.3rem;

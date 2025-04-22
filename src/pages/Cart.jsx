@@ -50,17 +50,22 @@ function Cart() {
         </div>
       )}
 
+
       {cart.length > 0 && (
         <div className="cart-total">
           Totalt: {total} kr
         </div>
       )}
 
-      <p className="thank-you">Tack för din beställning!</p>
+      {cart.length > 0 && (
+        <div className="cart-buttons">
+          <Link to="/checkout" className="button-style order-link">Beställ</Link>
+          <Link to="/" className="button-style back-link">Tillbaka</Link>
+        </div>
+      )}
 
-      <div className="back-button">
-        <Link to="/" className="back-link">Tillbaka</Link>
-      </div>
+      {/*<p className="thank-you">Tack för din beställning!</p>*/}
+      
     </div>
   ); 
 }

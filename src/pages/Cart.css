@@ -60,25 +60,6 @@ html, body {
 	font-weight: bolder;
   }
   
-  .back-button {
-	margin-top: 2rem;
-	text-align: center;
-  }
-  
-  .back-link {
-	padding: 1rem 2rem;
-	background-color: #3b1f1f;
-	color: white;
-	text-decoration: none;
-	border-radius: 0.5rem;
-	font-weight: bold;
-	font-size: 1.2rem;
-  }
-  
-  .back-link:hover {
-	background-color: #6c3f3f;
-  }
-  
   .cart-item {
 	display: flex;
 	justify-content: space-between;
@@ -130,6 +111,53 @@ html, body {
   .remove-item button:hover {
 	background-color: #e53935;
   }
+
+  .checkout-button {
+	text-align: center;
+	margin-top: 20px;
+  }
+
+  /* tillbaka o beställ-knappa  */
+	.button-style {
+		display: inline-block;
+		padding: 15px 30px;
+		box-shadow: 0 0 5px rgba(0, 0, 0, 0.05), 0 4px 12px rgba(0, 0, 0, 0.1);
+		font-size: 1.4rem;
+		text-decoration: none;
+		font-family: 'Italiana', serif;
+		text-align: center;
+		transition: background-color 0.3s ease;
+	}
+
+	.back-link {
+		background-color: #3b1f1f;
+		color: white;
+		width: 50%;
+	}
+
+	.back-link:hover {
+		background-color: #6c3f3f;
+	}
+
+	.order-link {
+		background-color: #FFF6A9;
+		color: black;
+		width: 50%;
+	}
+
+	.order-link:hover {
+		background-color: #edd586;
+	}
+
+	.cart-buttons {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		gap: 10px;
+		margin-top: 20px;
+	}
+
+  
   
   footer {
 	margin-top: auto;
