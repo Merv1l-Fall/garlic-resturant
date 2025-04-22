@@ -1,6 +1,6 @@
 import useMenuStore from "../data/menuStore";
 import "./Menu.css";
-import { useState, useRef, useEffect } from "react";
+import { useState } from "react";
 import { useCartStore } from "../data/cartStore";
 
 
@@ -8,35 +8,13 @@ const Menu = () => {
 	const {menuItems, loadMenuItems, removeMenuItem} = useMenuStore();
 	const addToCart = useCartStore((state) => state.addToCart);
 	const [selectedItem, setSelectedItem] = useState(null);
-	//const detailsRefs = useRef({});
+	
 
 
     const handleClick = (item) => {
-		console.log("Clicked item:", item); 
-        setSelectedItem(item); // Sätt det valda objektet i state
-		console.log("Selected item state:", item); 
+        setSelectedItem(item); 
     };
-	/*
-	const handleOutsideClick = (event) => {
-		if (
-			selectedItem &&
-			detailsRefs.current[selectedItem.id] &&
-			detailsRefs.current[selectedItem.id].contains &&
-			!detailsRefs.current[selectedItem.id].contains(event.target)
-		) {
-			setSelectedItem(null); // Stäng detaljerna om klicket är utanför
-		}
-	};
 	
-	
-
-
-	useEffect(() => {
-        document.addEventListener("click", handleOutsideClick);
-        return () => {
-            document.removeEventListener("click", handleOutsideClick);
-        };
-    }, [selectedItem]); */
 
     return (
         <div className="menu">
@@ -66,7 +44,6 @@ const Menu = () => {
                     </li>
                 ))}
             </ul>
-			
         </div>
     );
 };
