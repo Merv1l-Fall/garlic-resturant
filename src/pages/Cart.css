@@ -117,6 +117,14 @@ html, body {
 	margin-top: 20px;
   }
 
+  .empty-cart {
+	text-align: center;
+	font-size: 1rem;
+	font-family: 'Italiana', serif;
+	margin-top: 250px;
+	font-weight: bold;
+  }
+
   /* tillbaka o beställ-knappa  */
 	.button-style {
 		display: inline-block;
