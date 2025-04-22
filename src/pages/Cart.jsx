@@ -31,7 +31,7 @@ function Cart() {
       <h1 className="cart-title">Din beställning</h1> 
 
       {cart.length === 0 ? ( 
-        <p className="empty-cart">En tom korg luktar inte mycket — använd tillbaka-knappen för att slänga i lite vitlök.</p> 
+        <p className="empty-cart">Här var det tomt. <br /> Gå tillbaka för att slänga i lite vitlök.</p> 
       ) : ( 
         <div className="cart-items">
           {cart.map((item) => (

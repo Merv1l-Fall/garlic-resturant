@@ -119,9 +119,9 @@ html, body {
 
   .empty-cart {
 	text-align: center;
-	font-size: 1.2rem;
+	font-size: 1rem;
 	font-family: 'Italiana', serif;
-	margin-top: 0px;
+	margin-top: 250px;
 	font-weight: bold;
   }
 
