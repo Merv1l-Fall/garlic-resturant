@@ -31,7 +31,7 @@ function Cart() {
       <h1 className="cart-title">Din beställning</h1> 
 
       {cart.length === 0 ? ( 
-        <p className="empty-cart">Din varukorg är tom.</p> 
+        <p className="empty-cart">En tom korg luktar inte mycket — använd tillbaka-knappen för att slänga i lite vitlök.</p> 
       ) : ( 
         <div className="cart-items">
           {cart.map((item) => (
@@ -57,12 +57,13 @@ function Cart() {
         </div>
       )}
 
+    <div className="cart-buttons">
       {cart.length > 0 && (
-        <div className="cart-buttons">
-          <Link to="/checkout" className="button-style order-link">Beställ</Link>
-          <Link to="/" className="button-style back-link">Tillbaka</Link>
-        </div>
+        <Link to="/checkout" className="button-style order-link">Beställ</Link>
       )}
+      <Link to="/menu" className="button-style back-link">Tillbaka</Link>
+    </div>
+
 
       {/*<p className="thank-you">Tack för din beställning!</p>*/}
       
