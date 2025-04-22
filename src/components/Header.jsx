@@ -11,7 +11,7 @@ const Header = () => {
   const location = useLocation();
   const showCartCount = location.pathname === "/menu" || location.pathname === "/cart";
 
-  const isSticky = location.pathname === "/menu"; // 👈 lägg till detta!
+  const isSticky = location.pathname === "/menu"; //bara sticky på menu
 
   return (
     <header className={`header ${isSticky ? "sticky-header" : ""}`}>
