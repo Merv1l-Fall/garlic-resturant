@@ -1,6 +1,7 @@
 
 import './Footer.css';
 import mapImage from "./map.png";
+import { Link } from 'react-router';
 
 function Footer() {
   return (
@@ -18,6 +19,8 @@ function Footer() {
           <div className="footer-divider" />
 
           <p><strong>Address:</strong><br />Linné gatan 5E Göteborg</p>
+
+          <Link to="/login">Jobbar du här? Då tror vi att du vill se det här</Link>
         </div>
 
         <div className="footer-map">
