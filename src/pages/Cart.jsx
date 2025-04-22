@@ -31,7 +31,7 @@ function Cart() {
       <h1 className="cart-title">Din beställning</h1> 
 
       {cart.length === 0 ? ( 
-        <p className="empty-cart">Din varukorg är tom.</p> 
+        <p className="empty-cart">Här var det tomt. <br /> Gå tillbaka för att slänga i lite vitlök.</p> 
       ) : ( 
         <div className="cart-items">
           {cart.map((item) => (
@@ -42,7 +42,7 @@ function Cart() {
                 <span>{item.quantity}</span>
                 <button onClick={() => handleIncrease(item.id)}>+</button>
                 <button className="remove-item" onClick={() => handleRemove(item.id)}>
-                  Ta bort
+                  <img src="src/components/close.png" alt="Ta bort" className="remove-icon" />
                 </button>
               </div>
             </div>
@@ -50,17 +50,23 @@ function Cart() {
         </div>
       )}
 
+
       {cart.length > 0 && (
         <div className="cart-total">
           Totalt: {total} kr
         </div>
       )}
 
-      <p className="thank-you">Tack för din beställning!</p>
+    <div className="cart-buttons">
+      {cart.length > 0 && (
+        <Link to="/checkout" className="button-style order-link">Beställ</Link>
+      )}
+      <Link to="/menu" className="button-style back-link">Tillbaka</Link>
+    </div>
 
-      <div className="back-button">
-        <Link to="/" className="back-link">Tillbaka</Link>
-      </div>
+
+      {/*<p className="thank-you">Tack för din beställning!</p>*/}
+      
     </div>
   ); 
 }

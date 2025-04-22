@@ -1,10 +1,10 @@
 
 // CartItem.js
-import { useCartStore } from '../data/cartStore'; // inam dorost
+//import { useCartStore } from '../data/cartStore'; // inam dorost
 import './CartItem.css';
 
 function CartItem({ item }) {
-  const removeFromCart = useCartStore((state) => state.removeFromCart);
+// const removeFromCart = useCartStore((state) => state.removeFromCart);
 
   return (
     <div className="flex justify-between items-center bg-gray-100 p-3 rounded shadow">
@@ -14,12 +14,12 @@ function CartItem({ item }) {
           {(item.quantity || 1)} × {item.price} kr
         </p>
       </div>
-      <button
+      {/* <button
         onClick={() => removeFromCart(item.id)}
         className="text-red-600 hover:underline text-sm"
       >
         
-      </button>
+      </button>*/}
     </div>
   );
 }

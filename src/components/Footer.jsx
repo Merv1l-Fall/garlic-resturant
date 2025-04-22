@@ -1,22 +1,27 @@
 
 import './Footer.css';
-import { Link } from 'react-router';
+import mapImage from "./map.png";
 
 function Footer() {
   return (
     <footer className="footer">
       <div className="footer-content">
         <div className="footer-info">
+          <div className="footer-opening-hours">
+            <p><strong>Öppettider:</strong></p>
+            <p>Vardagar: 11:00 - 20:00</p>
+            <p>Helg: 11:00 - 19:00</p>
+          </div>
+
           <p><strong>Ring oss:</strong><br />07373222</p>
+
           <div className="footer-divider" />
+
           <p><strong>Address:</strong><br />Linné gatan 5E Göteborg</p>
-          <Link to="/login"><p>Pssst, admin se här!</p></Link>
         </div>
+
         <div className="footer-map">
-          <img
-            src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b2/Map_of_Stockholm.png/400px-Map_of_Stockholm.png"
-            alt="Map"
-          />
+          <img src={mapImage} alt="Map" />
         </div>
       </div>
     </footer>
