@@ -39,6 +39,25 @@
     margin-left: 0px;
 }
 
+/* siffra antal rätter */
+.cart-link {
+    position: relative;
+  }
+  
+  .cart-count {
+    position: absolute;
+    top: -8px;
+    right: -8px;
+    background: #FFF6A9;
+    color: rgb(0, 0, 0);
+    border-radius: 50%;
+    padding: 2px 6px;
+    font-size: 15px;
+    font-weight: 900;
+    font-family:'Times New Roman', Times, serif;
+  }
+  
+
 /* 320px */
 @media (max-width: 320px) {
     .header {
@@ -68,7 +87,7 @@
     }
 }
 
-/* För skärmar upp till 750px */
+/*750px */
 @media (max-width: 750px) {
     .header {
         padding: 15px;  
@@ -87,7 +106,7 @@
     } 
 }
 
-/* För skärmar upp till 1100px */
+/*1100px */
 @media (max-width: 1100px) {
     .header {
         padding: 20px; 
