@@ -1,3 +1,4 @@
+/* Utgångsläget: Desktop (bredare än 750px) */
 html, body {
     margin: 0;
     padding: 0;
@@ -38,6 +39,7 @@ body {
     border: 2px solid black;
     padding: 40px 40px;
     text-align: center;
+    align-items: center;
     flex: 1 1 30%;
     box-sizing: border-box;
     margin: 0 45px auto;
@@ -85,17 +87,49 @@ body {
     background-color: #edd586;
 }
 
-@media (width: 1100px) {
-    .home h1 {
-        font-size: 4.7rem;
-        margin-bottom: 20px;
-        margin: 80px auto;
+
+/* Surfplattor & små skärmar — max 750px */
+@media (max-width: 750px) {
+    .intro {
+        flex-direction: column;
+        align-items: center;
         text-align: center;
+        margin: 20px 10px;
+        gap: 15px;
+    }
+
+    .intro h1 {
+        font-size: 3.5rem;
+        margin: 0;
+        text-align: center;
+    }
+
+    .hero {
+        margin: 0 auto;
+        width: 95%;
+        padding: 15px;
+        align-items: center;
+    }
+
+    .hero p {
+        font-size: 1.4rem;
+        width: 100%;
+        text-align: center;
+    }
+
+    .menu-button {
+        font-size: 3.5rem;
+        padding: 10px 70px;
     }
 }
 
+/* Mobil extra liten — max 320px */
+@media (max-width: 320px) {
+    .intro h1 {
+        font-size: 1.3rem;
+        line-height: 30px;
+    }
 
-@media (max-width: 750px) {
     .intro {
         flex-direction: column;
         align-items: center;
@@ -103,52 +137,31 @@ body {
         margin: 20px;
     }
 
-    .home h1 {
-        font-size: 2rem;
-        margin-bottom: 20px;
+    .hero {
+        margin: 0;
+        width: 100%;
+        padding: 5px 15px 0 0 ;
+        align-items: center;
         text-align: center;
     }
 
-    .hero {
-        margin: 0;
-        width: 90%;
-        padding: 20px;
-    }
-
     .hero p {
-        font-size: 1rem;
+        font-size: 1.2rem;
+        text-align: center;
     }
 
     .menu-button {
-        font-size: 1.8rem;
-        padding: 10px 35px;
-    }
-}
-
-@media (max-width: 320px) {
-    .home h1 {
-        font-size: 1.3rem;
-    }
-
-    .hero {
-        margin: 0;
-        width: 90%;
-        padding: 10px;
-    }
-
-    .hero p {
-        font-size: 1.1rem;
-    }
-
-    .menu-button {
-        font-size: 1.5rem;
-        width: 180px;
+        font-size: 3rem;
+        width: 80%;
+        padding: 10px 90px 10px 40px;
     }
 
     .menu-section {
         height: 40vh;
         width: 100%;
         margin: 0;
+        align-items: center;
+        text-align: center;
     }
 
     .image-container {
@@ -164,13 +177,4 @@ body {
         height: 100vh;
     }
 
-    .home {
-        flex: 1;
-    }
-
-    footer {
-        margin-top: auto;
-    }
 }
-
-
