@@ -1,14 +1,26 @@
 .checkout {
+    min-height: 90vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     .receipt {
+        font-family: 'Galdeano', serif;
+        margin: 2rem;
+        min-width: 500px;
         display: flex;
         flex-direction: column;
         font-size: larger;
         gap: 1rem;
         padding: 2rem;
-        background-color: #fffbd6;
+        background-color: #fff8e7;
         box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 
+        h1{
+            align-self: center;
+        }
+
         h2 {
+            font-family: 'Italiana', serif;
             align-self: center;
         }
 
@@ -42,27 +54,40 @@
             div {
                 display: flex;
                 flex-direction: column;
+                align-items: flex-end;
             }
             display: flex;
+            gap: 0.5rem;
             flex-direction: column;
             align-items: flex-end;
     
         }
 
         button {
-            background-color: #fff6a9;
+            flex-grow: 1;
+            background-color: #FFF6A9;
+            border: black 1px solid;
             padding: 1rem;
-            transition: background-color 0.3s ease-out;
+            font-size: 2rem;
+            color: rgb(0, 0, 0);
+            cursor: pointer;
+            font-family: 'Italiana', serif;
+            font-weight: bold;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+            transition: background-color 0.3s ease;
         }
         button:hover {
-            background-color: #fdbf6e;
+            background-color: #edd586;
         }
     }
 }
 
-@media (max-width: 768px) {
+@media (max-width: 500px) {
     .checkout {
         .receipt {
+            width: 100%;
+            min-width: 0;
+            margin:0;
             padding: 0;
             font-size: large;
             gap: 0.5rem;
