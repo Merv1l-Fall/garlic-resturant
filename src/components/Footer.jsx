@@ -13,6 +13,7 @@ function Footer() {
             <p>Helg: 11:00 - 19:00</p>
           </div>
 
+
           <p><strong>Ring oss:</strong><br />07373222</p>
 
           <div className="footer-divider" />
