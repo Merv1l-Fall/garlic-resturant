@@ -39,6 +39,8 @@
     margin-left: 0px;
 }
 
+
+
 /* siffra antal rätter */
 .cart-link {
     position: relative;
@@ -56,6 +58,13 @@
     font-weight: 900;
     font-family:'Times New Roman', Times, serif;
   }
+
+  .sticky-header {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
   
 
 /* 320px */

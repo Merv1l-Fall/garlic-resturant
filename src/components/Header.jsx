@@ -11,8 +11,10 @@ const Header = () => {
   const location = useLocation();
   const showCartCount = location.pathname === "/menu" || location.pathname === "/cart";
 
+  const isSticky = location.pathname === "/menu"; //bara sticky på menu
+
   return (
-    <header className="header">
+    <header className={`header ${isSticky ? "sticky-header" : ""}`}>
       <div className="header-left">
         <Link to="/" className="logo-link">  
           <img src={GarlicIcon} alt="Garlic Icon" className="garlic-icon" />
