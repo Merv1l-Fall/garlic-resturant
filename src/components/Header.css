@@ -6,6 +6,7 @@
     justify-content: space-between; 
     align-items: center;
     width: 100%;
+    height: 20vh;
 }
 
 .header-left {
@@ -72,7 +73,8 @@
     .header {
         padding: 10px;  
         flex-direction: row;  
-        align-items: center; 
+        align-items: center;
+        width: 100%;
     }
 
     .header-left {
