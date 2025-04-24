@@ -19,6 +19,7 @@ const MenuItem = ({ item, onEdit, onRemove }) => {
 	const handleCancel = () => {
 		setIsEditing(false);
 		setFormData(item);
+		setErrors({});
 		setTimeout(() => {
 			setShouldRenderEditForm(false);
 		}, 300);
@@ -27,6 +28,7 @@ const MenuItem = ({ item, onEdit, onRemove }) => {
 	const handleSave = () => {
 		//Joi doesn't expect id so id is excluded from verification
 		const { id, ...dataToValidate } = formData;
+
 		// Validate
 		const { error } = addMenuItemSchema.validate(dataToValidate, {
 			abortEarly: false,
@@ -40,7 +42,9 @@ const MenuItem = ({ item, onEdit, onRemove }) => {
 			setErrors(validationErrors);
 			return;
 		}
+
 		onEdit(formData);
+		setErrors({});
 		setIsEditing(false);
 		setTimeout(() => {
 			setShouldRenderEditForm(false);
@@ -69,7 +73,9 @@ const MenuItem = ({ item, onEdit, onRemove }) => {
 		<div className={`menu-item ${isEditing ? "editing" : ""}`}>
 			{shouldRenderEditForm ? (
 				<div className={`edit-form ${isEditing ? "open" : "close"}`}>
+					<label htmlFor="title">Titel</label>
 					<input
+						id="title"
 						type="text"
 						name="title"
 						value={formData.title}
@@ -78,13 +84,21 @@ const MenuItem = ({ item, onEdit, onRemove }) => {
 					<div className='error-message'>
 					{errors.title && <p className="error">{errors.title}</p>}
 					</div>
+					
+					<label htmlFor="description">Beskrivning</label>
 					<textarea
+						id="description"
 						name="description"
 						value={formData.description}
 						onChange={handleChange}
 					/>
+					<div className='error-message'>
 					{errors.description && <p className="error">{errors.description}</p>}
+					</div>
+					
+					<label htmlFor="ingredients">Ingredienser</label>
 					<textarea
+						id="ingredients"
 						name="ingredients"
 						value={formData.ingredients}
 						onChange={handleChange}
@@ -92,7 +106,10 @@ const MenuItem = ({ item, onEdit, onRemove }) => {
 					<div className='error-message'>
 					{errors.ingredients && <p className="error">{errors.ingredients}</p>}
 					</div>
+					
+					<label htmlFor="price">Pris</label>
 					<input
+						id="price"
 						type="number"
 						name="price"
 						value={formData.price}
@@ -101,7 +118,10 @@ const MenuItem = ({ item, onEdit, onRemove }) => {
 					<div className='error-message'>
 					{errors.price && <p className="error">{errors.price}</p>}
 					</div>
+					
+					<label htmlFor="img">Bild URL</label>
 					<input
+						id="img"
 						type="text"
 						name="img"
 						value={formData.img}
@@ -110,6 +130,7 @@ const MenuItem = ({ item, onEdit, onRemove }) => {
 					<div className='error-message'>
 					{errors.img && <p>{errors.img}</p>}
 					</div>
+					
 					<div className="menu-actions">
 						<button className="save-btn" onClick={handleSave}>
 							Spara

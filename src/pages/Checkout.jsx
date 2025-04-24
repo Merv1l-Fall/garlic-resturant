@@ -49,7 +49,7 @@ const Checkout = () => {
                         <p>subtotal: {subtotal}kr</p>
                         <p>moms: {moms}kr</p>
                     </div>
-                    <h3>Total: {total}kr</h3>
+                    <h3>TOTAL: {total}kr</h3>
                 </div>
                 <button onClick={handleNewOrder}>Ny beställning</button>
             </div>

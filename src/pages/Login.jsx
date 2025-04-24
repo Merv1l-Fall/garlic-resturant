@@ -43,7 +43,7 @@ const Login = () => {
             <div className="login">
                 <div className="login-box">
                     {!admin ? (
-                        <h3>Logga in för att ändra</h3>
+                        <h3>Logga in för att redigera menyn</h3>
                     ) : (
                         <h3>Du är inloggad</h3>
                     )}
