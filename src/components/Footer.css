@@ -43,6 +43,15 @@
 	box-sizing: border-box;
 }
 
+.login-link {
+	color: #FFF6A9; 
+	text-decoration: none;
+  }
+  
+  .login-link:hover {
+	text-decoration: underline;
+  }
+  
 
 @media (max-width: 900px) {
 	.footer-content {
