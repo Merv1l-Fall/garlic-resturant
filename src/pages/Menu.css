@@ -6,17 +6,20 @@
   	height: 100%;
   	background-color: #FFFBD6;
 	margin: 0;
-	font-family: 'Italiana';
+	
 
 
 	h1{
 		text-align: center;
 		font-size: 3em;
-		font-family: 'galdeano';
+		font-family: 'Italiana', serif;
 		margin: 0;
 		padding: 1em;
 		background-color: #FFFBD6;
 		color: rgb(13, 13, 13);
+	}
+	h2{
+		font-family: 'Italiana', serif;
 	}
 
 	ul{
@@ -37,7 +40,7 @@
 		font-size: 1.5em;
 		margin-bottom: 0.3em;
 		gap: 3rem;
-		font-family: 'Italiana';
+		font-family: 'galdeano';
 
 		&:hover {
 			background-color:#261717;
@@ -190,7 +193,7 @@
 	}
 
 
-@media (min-width: 600px) and (max-width: 800px) {
+@media (min-width: 601px) and (max-width: 800px) {
 	li {
 	  flex-direction: column; /* Stapla text och bild ovanpå varandra */
 	  align-items: flex-start; /* vänsterjustera */
