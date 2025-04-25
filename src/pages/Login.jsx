@@ -1,6 +1,6 @@
 import "./login.css";
 import { useLoginStore } from "../data/loginStore.js";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import EditMenu from "./EditMenu.jsx";
 import AddMenuItem from "./AddMenuItem.jsx";
 
@@ -17,7 +17,6 @@ const Login = () => {
             toggleAdmin();
             setError("");
             setValid("valid");
-            // navigate("/edit-menu"); 
         } else {
             setError("Fel lösenord.");
             setValid("invalid");
