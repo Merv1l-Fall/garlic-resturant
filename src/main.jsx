@@ -6,11 +6,10 @@ import "./index.css";
 import App from "./App.jsx"; 
 import Home from "./pages/Home.jsx";
 import Menu from "./pages/Menu.jsx";
-import EditMenu from "./pages/EditMenu.jsx";
 import Cart from "./pages/Cart.jsx";
 import Login from "./pages/Login.jsx";
 import Checkout from "./pages/Checkout.jsx";
-import AddMenuItem from "./pages/AddMenuItem.jsx";
+
 
 
 const router = createHashRouter([
@@ -19,10 +18,10 @@ const router = createHashRouter([
         Component: App,
         children: [
             { index: true, Component: Home },
-            { path: "/menu", Component: Menu },
-            { path: "/login", Component: Login },
-            { path: "/checkout", Component: Checkout },
-            { path: "/cart", Component: Cart },
+            { path: "menu", Component: Menu },
+            { path: "login", Component: Login },
+            { path: "checkout", Component: Checkout },
+            { path: "cart", Component: Cart },
 
             
         ],
