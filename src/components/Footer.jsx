@@ -18,7 +18,7 @@ function Footer() {
 
           <div className="footer-divider" />
 
-          <p><strong>Address:</strong><br />Linné gatan 5E Göteborg</p>
+          <p><strong>Address:</strong><br />Linnégatan 5E Göteborg</p>
 
           <Link to="/login" className="login-link">Jobbar du här? Då tror vi att du vill se det här</Link>
         </div>
