@@ -96,7 +96,6 @@ html, body {
 	font-size: 1.2rem;
 	font-weight: bold;
   }
-  
   .remove-item button {
 	background-color: #f44336;
 	color: white;
@@ -111,12 +110,16 @@ html, body {
   .remove-item button:hover {
 	background-color: #e53935;
   }
-
+  
+  .remove-icon {
+	font-size: 18px; /* Justera storleken på krysset */
+  }
+  
   .checkout-button {
 	text-align: center;
 	margin-top: 20px;
   }
-
+  
   .empty-cart {
 	text-align: center;
 	font-size: 1rem;
@@ -124,11 +127,7 @@ html, body {
 	margin-top: 250px;
 	font-weight: bold;
   }
-
-  .remove-icon {
-	width: 13px;  
-	height: 13px;
-  }
+  
   
 
   /* tillbaka o beställ-knappa  */

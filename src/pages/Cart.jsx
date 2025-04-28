@@ -42,7 +42,7 @@ function Cart() {
                 <span>{item.quantity}</span>
                 <button onClick={() => handleIncrease(item.id)}>+</button>
                 <button className="remove-item" onClick={() => handleRemove(item.id)}>
-                  <img src="src/components/close.png" alt="Ta bort" className="remove-icon" />
+                <span className="remove-icon">🗙</span>
                 </button>
               </div>
             </div>
