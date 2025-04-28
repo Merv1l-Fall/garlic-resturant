@@ -14,7 +14,6 @@ const Checkout = () => {
     let moms = total * 0.25;
     let subtotal = total - moms;
 
-    // SÄTT DENNA I KNAPPEN PÅ CART!!!
     const [orderNr, setOrderNr] = useState(Math.floor(Math.random()*100))
 
 
