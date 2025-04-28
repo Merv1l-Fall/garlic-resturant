@@ -27,11 +27,11 @@ const Menu = () => {
                             <p>{item.description}</p>
 							<p className="price">{item.price} kr</p>
 							<button onClick={() => addToCart(item)} className="order-button">Lägg till i beställning</button>
-							<div>
+							<div className="ingredient-container">
 							<button className="ingredient-button" onClick={() => handleClick(item)}>Tryck för mer info</button>
 							{selectedItem?.id === item.id && (
                                 <div className="item-details">
-                                    <h2>Ingredienser</h2>
+                                    <h2 className="ingredient-header">Ingredienser</h2>
                                     <p>{selectedItem.ingredients}</p>
 									<button className="close-button" onClick={() => setSelectedItem(null)}>Stäng</button>
                                 </div>
