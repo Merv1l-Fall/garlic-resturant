@@ -1,34 +1,57 @@
 import "./checkout.css";
+import { useCartStore } from "../data/cartStore"; 
+import { useState } from "react";
+import { useNavigate } from "react-router";
+
+
 const Checkout = () => {
-    const total = 99;
-    let moms = Math.round(total * 0.12 * 100) / 100;
+    const navigate = useNavigate();
+    const cart = useCartStore((state) => state.cart);
+    let total = cart.reduce( 
+        (sum, item) => sum + (item.price * (item.quantity || 1)), 
+        0 
+      ); 
+    let moms = total * 0.25;
     let subtotal = total - moms;
+
+    // SÄTT DENNA I KNAPPEN PÅ CART!!!
+    const [orderNr, setOrderNr] = useState(Math.floor(Math.random()*100))
+
+
+    const handleNewOrder = () => {
+        useCartStore.setState({ cart: [] });
+        navigate("/menu");
+    }
+        
     return (
         <div className="checkout">
             <div className="receipt">
-                {/* tackför din beställning */}
-                <h2>Ditt Ordernummer: 99</h2>
+
+                <h2>Tack för din beställning</h2>
+                <h4>Ditt Ordernummer:</h4>
+                <h1>{orderNr}</h1>
                 <div className="items">
                     <div className="items-header">
                         <p>Beställning</p>
                         <p>Antal</p>
                         <p>Pris</p>
                     </div>
-                    {/* en komponent elller ba map eller nåt ist*/}
-                    <div className="item">
-                        <p>Vitlökspasta</p>
-                        <p>77</p>
-                        <p>89.90</p>
-                    </div>
+                    {cart.map(item=>(                    
+                    <div className="item" key={item.title}>
+                        <p>{item.title}</p>
+                        <p>{item.quantity}</p>
+                        <p>{item.price*item.quantity}</p>
+                    </div>))}
+
                 </div>
                 <div className="total">
                     <div>
                         <p>subtotal: {subtotal}kr</p>
                         <p>moms: {moms}kr</p>
                     </div>
-                    <h3>Total: 99kr</h3>
+                    <h3>TOTAL: {total}kr</h3>
                 </div>
-                <button>gå tillbaka</button>
+                <button onClick={handleNewOrder}>Ny beställning</button>
             </div>
         </div>
     );

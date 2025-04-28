@@ -6,17 +6,20 @@
   	height: 100%;
   	background-color: #FFFBD6;
 	margin: 0;
-	font-family: 'Italiana';
+	
 
 
 	h1{
 		text-align: center;
 		font-size: 3em;
-		font-family: 'galdeano';
+		font-family: 'Italiana', serif;
 		margin: 0;
 		padding: 1em;
 		background-color: #FFFBD6;
 		color: rgb(13, 13, 13);
+	}
+	h2{
+		font-family: 'Italiana', serif;
 	}
 
 	ul{
@@ -25,7 +28,7 @@
 
 	li {
 		list-style: none;
-		padding: 5em;
+		padding: 4em;
 		margin: 5px 0;
 		background-color: #251414;
 		color: rgb(248, 244, 244);
@@ -37,13 +40,13 @@
 		font-size: 1.5em;
 		margin-bottom: 0.3em;
 		gap: 3rem;
-		font-family: 'Italiana';
+		font-family: 'galdeano';
 
 		&:hover {
-			background-color: #3a3a3a;
+			background-color:#261717;
 		}
 		&:active {
-			background-color: #1a1a1a;
+			background-color: #261717;
 		}
 		.text-content {
 			flex: 1;
@@ -65,10 +68,13 @@
 		.img-content img {
 			width: 100%;
 			height: auto;
-			max-height: 400px; /* om du vill begränsa höjd */
+			max-height: 400px;
+			max-width: 400px;
 			object-fit: cover;
 			border-radius: 2px;
+			margin-top: 2.4em;
 		  }
+		  
 		.img-content p{
 			font-size: 1.7em;
 			text-align: center;
@@ -81,46 +87,113 @@
 			margin-top: 1em;
 			margin-bottom: 0.2em;
 		}
+		
 		li p{
 			margin-top: 1em;
 		}
 		.item-details {
 			
-			padding: 20px;
-			
 			z-index: 10;
 			position: relative;
 			
 		}
-		button {
-			padding: 10px 20px;
+		.order-button {
+			padding: 15px 20px;
 			font-size: 1em;
-			background-color: #1b0f0f;
-			color: #f3f1f1;
+			background-color:#FFF6A9;
+			color: #0d0d0d;
 			border: none;
-			border-radius: 5px;
 			cursor: pointer;
+			border: 1px solid #090505;
+			margin-top: 0.5em;
+
+			&:hover {
+				background-color: #faee86;
+			}
 		}
-		
-		button:hover {
-			background-color: #1a1a1a;
-		}
-		
-		button:active {
-			background-color: #000;
-		}
-		
+
 		.ingredient-button {
 			display: flex;
 			justify-content: space-between;
+			padding: 10px 20px;
+			font-size: 1em;
 			gap: 1rem;
-			background-color:#FFF6A9;
-			color: #3a3a3a;
-			margin-bottom: 2em;
+			background-color: #1b0f0f;
+			color: #f6f6f6;
+			margin-bottom: 1em;
+			cursor: pointer;
+			margin-top: 1.5em;
+
+			&:hover {
+				background-color: #261717;
+			}
 		}
+
+		.close-button {
+			padding: 10px 20px;
+			font-size: 1em;
+			background-color:#FFF6A9;
+			color: #0e0d0d;
+			border: none;
+			cursor: pointer;
+			border: 1px solid #090505;
+			margin-top: 1em;
+
+			&:hover {
+				background-color: #faee86;
+			}
+		}
+		
+		
 	}
 	/* Mobilanpassning */
-@media (max-width: 768px) {
+	@media (min-width: 320px) and (max-width: 600px) {
+		.text-content {
+			flex: 1;
+			text-align: center; /* Centrera texten */
+		}
+		.img-content {
+			display: flex;
+			flex-direction: column;
+			align-items: center; /* Centrera bilden */
+			gap: 0.5rem;
+			max-width: 100%; /* Gör bilden responsiv */
+			flex-shrink: 0;
+		}
+		.ingredient-button{
+			flex-direction: column; /* Stapla text och bild 
+			ovanpå varandra */
+			align-items: center; /* Centrera innehållet */
+			padding: 2em; /* Minska padding */
+			font-size: 1.5em; /* Minska textstorlek */
+			gap: 1rem; /* Minska gap mellan text och bild */
+			justify-self: center;
+		}
+		li {
+			flex-direction: column; /* Stapla text och bild ovanpå varandra */
+			align-items: center; /* Centrera innehållet */
+			padding: 2em; /* Minska padding */
+			font-size: 1.5em; /* Minska textstorlek */
+			gap: 1rem; /* Minska gap mellan text och bild */
+		}
+		h1 {
+			font-size: 2em; /* Minska rubrikens storlek */
+			padding: 0.5em; /* Minska padding */
+			
+		}
+		li {
+			padding: 2em; /* Minska padding */
+			font-size: 1.2em; /* Minska textstorlek */
+			gap: 1rem; /* Minska gap mellan text och bild */
+		}
+		li img {
+			max-width: 100%; /* Gör bilden responsiv */
+			max-height: 200px; /* Max höjd för bilden */
+		}
+	}
+
+
+@media (min-width: 601px) and (max-width: 800px) {
 	li {
 	  flex-direction: column; /* Stapla text och bild ovanpå varandra */
 	  align-items: flex-start; /* vänsterjustera */
@@ -133,4 +206,44 @@
 	}
 
   }
+@media (min-width: 800px) and (max-width: 1000px) {
+	li {
+	  flex-direction: row; /* Återgå till radlayout */
+	  align-items: center; /* Centrera innehållet */
+	}
+  
+	li img {
+	  width: 100%; /* Gör bilden bredare på mobil */
+	  max-width: 100px; /* Max så den inte blir jättestor */
+	  margin-top: 1rem;
+	}
+  
+	li {
+	  padding: 2em; /* Minska padding */
+	  font-size: 1.5em; /* Minska textstorlek */
+	  gap: 1rem; /* Minska gap mellan text och bild */
+	}
+  
+	h1 {
+	  font-size: 2em; /* Minska rubrikens storlek */
+	  padding: 0.5em; /* Minska padding */
+	}
+  
+	li {
+	  padding: 2em; /* Minska padding */
+	  font-size: 1.2em; /* Minska textstorlek */
+	  gap: 1rem; /* Minska gap mellan text och bild */
+	}
+  
+	li img {
+	  max-width: 100%; /* Gör bilden responsiv */
+	  max-height: 200px; /* Max höjd för bilden */
+	}
+  
+  }
+  
+
+@media (min-width: 1400px) {
+
+}
 }

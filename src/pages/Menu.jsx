@@ -1,6 +1,6 @@
 import useMenuStore from "../data/menuStore";
 import "./Menu.css";
-import { useState, useRef, useEffect } from "react";
+import { useState } from "react";
 import { useCartStore } from "../data/cartStore";
 
 
@@ -8,35 +8,13 @@ const Menu = () => {
 	const {menuItems, loadMenuItems, removeMenuItem} = useMenuStore();
 	const addToCart = useCartStore((state) => state.addToCart);
 	const [selectedItem, setSelectedItem] = useState(null);
-	//const detailsRefs = useRef({});
+	
 
 
     const handleClick = (item) => {
-		console.log("Clicked item:", item); 
-        setSelectedItem(item); // Sätt det valda objektet i state
-		console.log("Selected item state:", item); 
+        setSelectedItem(item); 
     };
-	/*
-	const handleOutsideClick = (event) => {
-		if (
-			selectedItem &&
-			detailsRefs.current[selectedItem.id] &&
-			detailsRefs.current[selectedItem.id].contains &&
-			!detailsRefs.current[selectedItem.id].contains(event.target)
-		) {
-			setSelectedItem(null); // Stäng detaljerna om klicket är utanför
-		}
-	};
 	
-	
-
-
-	useEffect(() => {
-        document.addEventListener("click", handleOutsideClick);
-        return () => {
-            document.removeEventListener("click", handleOutsideClick);
-        };
-    }, [selectedItem]); */
 
     return (
         <div className="menu">
@@ -48,20 +26,14 @@ const Menu = () => {
                             <h2>{item.title}</h2>
                             <p>{item.description}</p>
 							<p className="price">{item.price} kr</p>
-							<button onClick={() => addToCart(item)} className="ingredient-button">Lägg till i beställning</button>
+							<button onClick={() => addToCart(item)} className="order-button">Lägg till i beställning</button>
 							<div>
-							<button onClick={() => handleClick(item)}>Tryck för mer info</button>
+							<button className="ingredient-button" onClick={() => handleClick(item)}>Tryck för mer info</button>
 							{selectedItem?.id === item.id && (
-                                <div
-                                    className="item-details"
-                                   /* ref={(el) => (detailsRefs.current[item.id] = el)}*/
-                                >
+                                <div className="item-details">
                                     <h2>Ingredienser</h2>
                                     <p>{selectedItem.ingredients}</p>
-									
-									<button   className="ingredient-button" onClick={() => setSelectedItem(null)}>Stäng</button>
-									
-									
+									<button className="close-button" onClick={() => setSelectedItem(null)}>Stäng</button>
                                 </div>
                             )}
 							</div>
@@ -72,7 +44,6 @@ const Menu = () => {
                     </li>
                 ))}
             </ul>
-			
         </div>
     );
 };

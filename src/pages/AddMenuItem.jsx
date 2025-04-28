@@ -1,11 +1,14 @@
 import React, { useState } from 'react';
 import addMenuItemSchema from '../validation';
+import { useLoginStore } from "../data/loginStore.js";
 import "./AddMenuItem.css";
 import useMenuStore from '../data/menuStore';
 import { Link } from "react-router";
 // import { saveMenu } from '../data/fetchMenu';
 
+
 const AddMenuItem = () => {
+    const toggleAdd = useLoginStore((state) => state.toggleAdd);
 	const {saveMenuItem} = useMenuStore()
 	const [formData, setFormData] = useState({
 		title: '',
@@ -87,6 +90,10 @@ const AddMenuItem = () => {
 		})
 		setTouched(false)
 	};
+
+    const handleBack = () => {
+        toggleAdd()
+    }
 
 	return (
 		<section className="add-menu-item">
@@ -180,12 +187,10 @@ const AddMenuItem = () => {
 						Lägg till
 					   </button>
 				</div>
-			</form>
-			</div>)}
-			
-			<Link to="/edit-menu">
-			<button className='return-button'>Tillbaka till admin-menyn</button>
-			</Link>
+			</form>	
+			</div>
+			)}
+			<button className='return-button' onClick={handleBack}>Tillbaka till admin-menyn</button>
 		</section>
 	);
 };

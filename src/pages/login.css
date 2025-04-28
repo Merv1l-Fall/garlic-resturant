@@ -3,10 +3,12 @@
     min-height: 100%;
     display: flex;
     justify-content: center;
+    align-items: center;
+    min-height: 90vh;
     .login-box {
         margin: 2rem;
         padding: 1rem;
-        min-height: 300px;
+        min-height: 315px;
         width: 300px;
         display: flex;
         flex-direction: column;
