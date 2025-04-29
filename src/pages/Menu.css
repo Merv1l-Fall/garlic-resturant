@@ -221,9 +221,11 @@
 	}
 	
 	li img {
+	  object-fit: cover;
 	  width: 100%; 
 	  max-width: 100px; 
 	  margin-top: 0;
+	  margin-bottom: 5em;
 	}
 	
 	h1 {
@@ -239,6 +241,7 @@
 		min-height: 10em;
 		font-size: larger;
 	}
+	
 }
 	
 
